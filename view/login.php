@@ -9,7 +9,7 @@
         }
         form {
             width: 300px;
-            margin: 80px auto;
+            margin: 200px auto;
             padding: 50px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -56,6 +56,7 @@
             height: 100vh;
             width: 100vw;
         }
+
         </style>
         <div class="col-md-12 col-sm-12 px-0 py-0 mx-0 my-0 row" style="height: 100%;">
             <br>
