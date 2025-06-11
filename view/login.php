@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
     <style>
         
@@ -72,7 +74,7 @@
                 <input type="text" id="username" name="username" required style="background-color: transparent;">
 
                 <label for="password"><strong style="color:white;">Contraseña:</strong></label>
-                <input type="password" id="password" name="password" required style="background-color: transparent;">
+                <input type="password" id="password" name="password" required style="background-color: transparent">
 
                 <input type="submit" value="Iniciar sesión">
             </form>
@@ -87,7 +89,12 @@
             position: relative;
             top: 200px;
         }
-        
+        input[type="text"]{
+            color: white;
+        }
+        input[type="password"]{
+            color: white;
+        }
         
     </style>
 </body>
