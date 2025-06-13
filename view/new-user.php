@@ -15,11 +15,15 @@
         }
 
         .nav-link {
-            color: blue;
+            color: black;
+        }
+
+        .home {
+            color: red;
         }
 
         .collapse {
-            background-color: skyblue;
+            background-color: whitesmoke;
         }
 
         img {
@@ -27,8 +31,15 @@
         }
 
         .card-header {
-            background-color: purple;
-            color: white;
+            background-color: silver;
+            color: black;
+        }
+
+        .form-control {
+            border: solid black;
+        }
+        .navbar-brand{
+            background-color: skyblue;
         }
     </style>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -40,7 +51,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link " aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">User</a>
@@ -83,95 +94,83 @@
     <div class="container-fluid">
         <div class="card">
             <center>
-                <h5 class="card-header">titulo</h5>
+                <h5 class="card-header">INGRESA TUS DATOS</h5>
             </center>
-            <div class="card-body">
-                <div class="mb-3 row">
-                    
+            <form>
+                <div class="card-body">
                     <div class="mb-3 row">
-                        <label for="input_nro_doc" class="col-sm-4 col-form-label"><strong>numero de documento:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="number" class="form-control" id="input_nro_doc">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_razon_social" class="col-sm-4 col-form-label"><strong>nombre razon social:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="input_razon_social">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_telefono" class="col-sm-4 col-form-label"><strong>telefono:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="number" class="form-control" id="input_telefono">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_email" class="col-sm-4 col-form-label"><strong>correo:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="email" class="form-control" id="input_email">
-                        </div>
-                    </div>
 
-                    <div class="mb-3 row">
-                        <label for="input_departamento" class="col-sm-4 col-form-label"><strong>departamento:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="input_Departamento">
+                        <div class="mb-3 row">
+                            <label for="nro_doc" class="col-sm-4 col-form-label"><strong>numero de documento:</strong></label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id="nro_doc" name="nro_doc">
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_provincia" class="col-sm-4 col-form-label"><strong>provincia:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="input_provincia">
+                        <div class="mb-3 row">
+                            <label for="razon_social" class="col-sm-4 col-form-label"><strong>nombre razon social:</strong></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="razon_social" name="razon_social">
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_distrito" class="col-sm-4 col-form-label"><strong>distrito:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="input_distrito">
+                        <div class="mb-3 row">
+                            <label for="telefono" class="col-sm-4 col-form-label"><strong>telefono:</strong></label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id="telefono" name="telefono">
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_cod_pos" class="col-sm-4 col-form-label"><strong>codigo postal:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="number" class="form-control" id="input_codigo_postal">
+                        <div class="mb-3 row">
+                            <label for="email" class="col-sm-4 col-form-label"><strong>correo:</strong></label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" id="email" name="correo">
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_direccion" class="col-sm-4 col-form-label"><strong>direccion:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="input_direccion">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_rol" class="col-sm-4 col-form-label"><strong>rol:</strong></label>
-                        <div class="col-sm-8">
-                            <select class="form-control" require>
-                                <option value=""disabled selected>seleccione</option>
-                                <option value="administrador">administrador</option>
-                                <option value="vendedor">vendedor</option>
-                                <option value="3">estudiante</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_fecha" class="col-sm-4 col-form-label"><strong>fecha:</strong></label>
-                        <div class="col-sm-8">
-                            <input type="date" id="fecha" name="fecha">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="input_fecha" class="col-sm-4 col-form-label"></label>
-                        <div class="col-sm-8">
-                            <a href="#" class="btn btn-primary">Registar</a>
-                            <a href="#" class="btn btn-primary">Limpiar</a>
-                            <a href="#" class="btn btn-primary">Cancelar</a>
-                        </div>
-                    </div>
 
+                        <div class="mb-3 row">
+                            <label for="departamento" class="col-sm-4 col-form-label"><strong>departamento:</strong></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="departamento" name="departamento">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="provincia" class="col-sm-4 col-form-label"><strong>provincia:</strong></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="provincia" name="provincia">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="distrito" class="col-sm-4 col-form-label"><strong>distrito:</strong></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="distrito" name="distrito">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="cod_postal" class="col-sm-4 col-form-label"><strong>cod postal:</strong></label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" id="cod_postal" name="cod_postal">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="direccion" class="col-sm-4 col-form-label"><strong>direccion:</strong></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="direccion" name="direccion">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="rol" class="col-sm-4 col-form-label"><strong>rol:</strong></label>
+                            <div class="col-sm-8">
+                                <select class="form-control" require name="rol" id="rol">
+                                    <option value="" disabled selected>seleccione</option>
+                                    <option value="administrador">administrador</option>
+                                    <option value="vendedor">vendedor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit">Registar</button>
+                        <button type="reset">Limpiar</button>
+                        <button type="button">Cancelar</button>
+                    </div>
                 </div>
-
-            </div>
+            </form>
         </div>
     </div>
 </body>
