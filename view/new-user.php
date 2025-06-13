@@ -21,10 +21,12 @@
         .collapse {
             background-color: skyblue;
         }
-        img{
+
+        img {
             border: 1px solid black;
         }
-        .card-header{
+
+        .card-header {
             background-color: purple;
             color: white;
         }
@@ -81,78 +83,79 @@
     <div class="container-fluid">
         <div class="card">
             <center>
-            <h5 class="card-header">titulo</h5>
+                <h5 class="card-header">titulo</h5>
             </center>
             <div class="card-body">
                 <div class="mb-3 row">
+                    
                     <div class="mb-3 row">
-                        <label for="input_nro_doc" class="col-sm-4 col-form-label">numero de documento:</label>
+                        <label for="input_nro_doc" class="col-sm-4 col-form-label"><strong>numero de documento:</strong></label>
                         <div class="col-sm-8">
                             <input type="number" class="form-control" id="input_nro_doc">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="input_razon_social" class="col-sm-4 col-form-label">nombre razon social:</label>
+                        <label for="input_razon_social" class="col-sm-4 col-form-label"><strong>nombre razon social:</strong></label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="input_razon_social">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="input_telefono" class="col-sm-4 col-form-label">telefono:</label>
+                        <label for="input_telefono" class="col-sm-4 col-form-label"><strong>telefono:</strong></label>
                         <div class="col-sm-8">
                             <input type="number" class="form-control" id="input_telefono">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="input_email" class="col-sm-4 col-form-label">correo:</label>
+                        <label for="input_email" class="col-sm-4 col-form-label"><strong>correo:</strong></label>
                         <div class="col-sm-8">
                             <input type="email" class="form-control" id="input_email">
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="input_departamento" class="col-sm-4 col-form-label">Departamento:</label>
+                        <label for="input_departamento" class="col-sm-4 col-form-label"><strong>departamento:</strong></label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="input_Departamento">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="input_provincia" class="col-sm-4 col-form-label">provincia:</label>
+                        <label for="input_provincia" class="col-sm-4 col-form-label"><strong>provincia:</strong></label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="input_provincia">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="input_distrito" class="col-sm-4 col-form-label">distrito:</label>
+                        <label for="input_distrito" class="col-sm-4 col-form-label"><strong>distrito:</strong></label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="input_distrito">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="input_cod_pos" class="col-sm-4 col-form-label">codigo postal:</label>
+                        <label for="input_cod_pos" class="col-sm-4 col-form-label"><strong>codigo postal:</strong></label>
                         <div class="col-sm-8">
                             <input type="number" class="form-control" id="input_codigo_postal">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="input_direccion" class="col-sm-4 col-form-label">direccion:</label>
+                        <label for="input_direccion" class="col-sm-4 col-form-label"><strong>direccion:</strong></label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="input_direccion">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="input_rol" class="col-sm-4 col-form-label">rol:</label>
+                        <label for="input_rol" class="col-sm-4 col-form-label"><strong>rol:</strong></label>
                         <div class="col-sm-8">
                             <select class="form-control" require>
-                                <option value=""></option>
-                                <option value="1">admin</option>
-                                <option value="2">docente</option>
+                                <option value=""disabled selected>seleccione</option>
+                                <option value="administrador">administrador</option>
+                                <option value="vendedor">vendedor</option>
                                 <option value="3">estudiante</option>
                             </select>
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="input_fecha" class="col-sm-4 col-form-label">fecha:</label>
+                        <label for="input_fecha" class="col-sm-4 col-form-label"><strong>fecha:</strong></label>
                         <div class="col-sm-8">
                             <input type="date" id="fecha" name="fecha">
                         </div>
