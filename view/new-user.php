@@ -38,9 +38,7 @@
         .form-control {
             border: solid black;
         }
-        .navbar-brand{
-            background-color: skyblue;
-        }
+        
     </style>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -96,84 +94,90 @@
             <center>
                 <h5 class="card-header">INGRESA TUS DATOS</h5>
             </center>
-            <form>
+            <form id="frm_user" action="" method="">
                 <div class="card-body">
                     <div class="mb-3 row">
 
                         <div class="mb-3 row">
                             <label for="nro_doc" class="col-sm-4 col-form-label"><strong>numero de documento:</strong></label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="nro_doc" name="nro_doc">
+                                <input type="number" class="form-control" id="nro_doc" name="nro_doc" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="razon_social" class="col-sm-4 col-form-label"><strong>nombre razon social:</strong></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="razon_social" name="razon_social">
+                                <input type="text" class="form-control" id="razon_social" name="razon_social" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="telefono" class="col-sm-4 col-form-label"><strong>telefono:</strong></label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="telefono" name="telefono">
+                                <input type="number" class="form-control" id="telefono" name="telefono" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="email" class="col-sm-4 col-form-label"><strong>correo:</strong></label>
                             <div class="col-sm-8">
-                                <input type="email" class="form-control" id="email" name="correo">
+                                <input type="email" class="form-control" id="email" name="correo" required>
                             </div>
                         </div>
 
                         <div class="mb-3 row">
                             <label for="departamento" class="col-sm-4 col-form-label"><strong>departamento:</strong></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="departamento" name="departamento">
+                                <input type="text" class="form-control" id="departamento" name="departamento" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="provincia" class="col-sm-4 col-form-label"><strong>provincia:</strong></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="provincia" name="provincia">
+                                <input type="text" class="form-control" id="provincia" name="provincia" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="distrito" class="col-sm-4 col-form-label"><strong>distrito:</strong></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="distrito" name="distrito">
+                                <input type="text" class="form-control" id="distrito" name="distrito" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="cod_postal" class="col-sm-4 col-form-label"><strong>cod postal:</strong></label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="cod_postal" name="cod_postal">
+                                <input type="number" class="form-control" id="cod_postal" name="cod_postal" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="direccion" class="col-sm-4 col-form-label"><strong>direccion:</strong></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="direccion" name="direccion">
+                                <input type="text" class="form-control" id="direccion" name="direccion" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="rol" class="col-sm-4 col-form-label"><strong>rol:</strong></label>
                             <div class="col-sm-8">
-                                <select class="form-control" require name="rol" id="rol">
+                                <select class="form-control" name="rol" id="rol" required>
                                     <option value="" disabled selected>seleccione</option>
                                     <option value="administrador">administrador</option>
                                     <option value="vendedor">vendedor</option>
                                 </select>
                             </div>
                         </div>
-                        <button type="submit">Registar</button>
-                        <button type="reset">Limpiar</button>
-                        <button type="button">Cancelar</button>
+                        <div class="mb-3 row">
+                            <label for="rol" class="col-sm-4 col-form-label"></label>
+                            <div class="col-sm-8">
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                                <button type="reset" class="btn btn-warning">Limpiar</button>
+                                <button type="button" class="btn btn-danger">Cancelar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </body>
+<script src="<?php echo BASE_URL; ?>view/funtion/user.js"></script>
 <script src="<?php echo BASE_URL; ?>view/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </html>
