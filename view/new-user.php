@@ -99,13 +99,13 @@
                     <div class="mb-3 row">
 
                         <div class="mb-3 row">
-                            <label for="nro_doc" class="col-sm-4 col-form-label"><strong>numero de documento:</strong></label>
+                            <label for="nro_identidad" class="col-sm-4 col-form-label"><strong>nro documento:</strong></label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="nro_doc" name="nro_doc" required>
+                                <input type="number" class="form-control" id="nro_identidad" name="nro_identidad" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="razon_social" class="col-sm-4 col-form-label"><strong>nombre razon social:</strong></label>
+                            <label for="razon_social" class="col-sm-4 col-form-label"><strong>razon social:</strong></label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" id="razon_social" name="razon_social" required>
                             </div>
@@ -117,9 +117,9 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="email" class="col-sm-4 col-form-label"><strong>correo:</strong></label>
+                            <label for="correo" class="col-sm-4 col-form-label"><strong>correo:</strong></label>
                             <div class="col-sm-8">
-                                <input type="email" class="form-control" id="email" name="correo" required>
+                                <input type="email" class="form-control" id="correo" name="correo" required>
                             </div>
                         </div>
 
@@ -164,7 +164,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="rol" class="col-sm-4 col-form-label"></label>
+                            <label for="" class="col-sm-4 col-form-label"></label>
                             <div class="col-sm-8">
                                 <button type="submit" class="btn btn-primary">Registrar</button>
                                 <button type="reset" class="btn btn-warning">Limpiar</button>
