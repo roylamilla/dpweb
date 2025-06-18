@@ -11,10 +11,19 @@ function validar_form() {
     let rol = document.getElementById("rol").value;
 
     if (nro_identidad == "" || razon_social == "" || telefono == "" || correo == "" || departamento == "" || provincia == "" || distrito == "" || cod_postal == "" || direccion == "" || rol == "") {
-        alert("Error: Existen Campos Vacios");
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Error: Campos Vacios!",
+            footer: '<a> Es necesario rellenar todos los campos </a>'
+        });
         return;
     }
-    alert("Procederemos a registrar")
+    Swal.fire({
+        title: "Vamos registrar!",
+        icon: "success",
+        draggable: true
+    });
 }
 
 if (document.querySelector('#frm_user')) {
@@ -25,4 +34,3 @@ if (document.querySelector('#frm_user')) {
         validar_form();
     }
 }
-
