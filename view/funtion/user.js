@@ -20,9 +20,13 @@ function validar_form() {
         return;
     }
     Swal.fire({
-        title: "Vamos registrar!",
-        icon: "success",
-        draggable: true
+        title: "Bien , vamos a registrar.",
+        width: 600,
+        padding: "3em",
+        color: "purple",
+        background: "#fff url(/images/trees.png)",
+        backdrop: `rgba(0,0,123,0.4)
+        url("view/img/cat.gif") center top 100px no-repeat` 
     });
 }
 
