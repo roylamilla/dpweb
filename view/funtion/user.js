@@ -14,20 +14,13 @@ function validar_form() {
         Swal.fire({
             icon: "error",
             title: "Oops...",
+            background: "#fff url(view/img/cat.gif) center top 20% no-repeat",
             text: "Error: Campos Vacios!",
             footer: '<a> Es necesario rellenar todos los campos </a>'
         });
         return;
     }
-    Swal.fire({
-        title: "Bien , vamos a registrar.",
-        width: 600,
-        padding: "3em",
-        color: "purple",
-        background: "#fff url(/images/trees.png)",
-        backdrop: `rgba(0,0,123,0.4)
-        url("view/img/cat.gif") center top 20% no-repeat` 
-    });
+    registrarUsuario();
 }
 
 if (document.querySelector('#frm_user')) {
@@ -38,3 +31,20 @@ if (document.querySelector('#frm_user')) {
         validar_form();
     }
 }
+
+async function registrarUsuario() {
+    try {
+        // capturar campos de formulario(HTML)
+        const datos = new FormData(frm_user);
+        //enviar datos al controlador
+        let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=registrar', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: datos
+        });
+    } catch (error) {
+        console.log("Error al registrar usuario:" + error);
+    }
+}
+

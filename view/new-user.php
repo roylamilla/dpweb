@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> RALP </title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>view/bootstrap/css/bootstrap.min.css">
-    <!-- iconos bootstrap
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    -->
+    <script>
+        const base_url = '<?php echo BASE_URL; ?>';
+    </script>
 </head>
 
 <body>
@@ -93,9 +93,9 @@
     </nav>
     <div class="container-fluid">
         <div class="card">
-            <center>
+            <center>   
                 <h5 class="card-header">INGRESA TUS DATOS</h5>
-            </center>
+            </center> 
             <form id="frm_user" action="" method="">
                 <div class="card-body">
                     <div class="mb-3 row">
@@ -166,7 +166,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="" class="col-sm-4 col-form-label"></label>
+                            <label class="col-sm-4 col-form-label"></label>
                             <div class="col-sm-8">
                                 <button type="submit" class="btn btn-primary">Registrar</button>
                                 <button type="reset" class="btn btn-warning">Limpiar</button>
