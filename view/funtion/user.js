@@ -20,6 +20,14 @@ function validar_form() {
         });
         return;
     }
+    Swal.fire({
+        title: "Muy Bien!",
+        text: "Vamos a registrar.",
+        imageUrl: "view/img/sarcastic.gif",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image"
+    });
     registrarUsuario();
 }
 
