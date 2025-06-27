@@ -1,4 +1,7 @@
 <?php
+require_once("../model/UsuarioModel.php");
+
+$objPersona = new UsuarioModel();
 
 $tipo = $_GET['tipo'];
 
@@ -14,13 +17,26 @@ if ($tipo == "registrar") {
     $cod_postal =  $_POST['cod_postal'];
     $direccion =  $_POST['direccion'];
     $rol =  $_POST['rol'];
+    //ENCRIPTANDO nro_identidad PARA USAR COMO CONTRASEÑA
+    $password = password_hash($nro_identidad, PASSWORD_DEFAULT);
 
+    /* validar que los campos no esten vacios*/
     if ($nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" || $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" || $direccion == "" || $rol == "") {
 
         $arrResponse = array('status' => false, 'msg' => 'Error, campos vacios');
-    }else {
-        $arrResponse = array('status' => true, 'msg' => 'Bien, vamos a registrar');
+    } else {
+        // validar si existe persona con el mismo nro_documento
+        $existePersona = $objPersona->existePersona($nro_identidad);
+        if ($existePersona > 0) {
+            $arrResponse = array('status' => false, 'msg' => 'Error: nro documento ya existe');
+        } else {
+            $respuesta = $objPersona->registrar($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito,       $cod_postal, $direccion, $rol, $password);
+            if ($respuesta) {
+                $arrResponse = array('status' => true, 'msg' => 'REGISTRADO CORRECTAMENTE');
+            } else {
+                $arrResponse = array('status' => false, 'msg' => 'ERROR: FALLO AL REGISTAR');
+            }
+        }
     }
     echo json_encode($arrResponse);
-    ..
 }
