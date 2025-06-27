@@ -20,15 +20,9 @@ function validar_form() {
         });
         return;
     }
-    Swal.fire({
-        title: "Muy Bien!",
-        text: "Vamos a registrar.",
-        imageUrl: "view/img/sarcastic.gif",
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: "Custom image"
-    });
     registrarUsuario();
+
+
 }
 
 if (document.querySelector('#frm_user')) {
@@ -51,6 +45,14 @@ async function registrarUsuario() {
             cache: 'no-cache',
             body: datos
         });
+        let json = await respuesta.json();
+        if (json.status) {
+            alert(json.msg);
+            document.getElementById('frm_user').reset();
+        } else {
+            alert(json.msg);
+        }
+
     } catch (error) {
         console.log("Error al registrar usuario:" + error);
     }
