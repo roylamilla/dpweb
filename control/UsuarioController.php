@@ -22,4 +22,5 @@ if ($tipo == "registrar") {
         $arrResponse = array('status' => true, 'msg' => 'Bien, vamos a registrar');
     }
     echo json_encode($arrResponse);
+    ..
 }
