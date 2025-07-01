@@ -67,16 +67,16 @@
                         <a class="nav-link" href="<?php echo BASE_URL; ?>products">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">category</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>category">category</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Clients</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Shops</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>compras">Shops</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sales</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>ventas">Sales</a>
                     </li>
 
                 </ul>

@@ -76,10 +76,10 @@
                         <a class="nav-link" href="#">Clients</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Shops</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>compras">Shops</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sales</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>venta">Sales</a>
                     </li>
 
                 </ul>
