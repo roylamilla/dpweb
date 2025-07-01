@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> RALP </title>
+    <title> Categoria </title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>view/bootstrap/css/bootstrap.min.css">
     <script>
         const base_url = '<?php echo BASE_URL; ?>';
@@ -13,6 +13,13 @@
 
 <body>
     <style>
+        #menu{
+            background-color:rgb(255, 0, 0);
+        }
+        #navbarSupportedContent{
+            background-color:rgb(43, 255, 0);
+        }
+
         body {
             background-color: skyblue;
         }
@@ -41,13 +48,6 @@
         .form-control {
             border: solid black;
         }
-
-        #navbarSupportedContent{
-            background-color:rgb(43, 255, 0);
-        }
-        #menu{
-            background-color:rgb(255, 0, 0);
-        }
     </style>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" id="menu">
@@ -62,15 +62,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL; ?>new-user">User</a>
-                        <!--
-                        <a href="<?php echo BASE_URL; ?>new-user">User</a>
-                        -->
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL; ?>products">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>category">category</a>
+                        <a class="nav-link" href="#">category</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Clients</a>
@@ -104,77 +101,33 @@
     <div class="container-fluid">
         <div class="card">
             <center>   
-                <h5 class="card-header">INGRESA TUS DATOS</h5>
+                <h5 class="card-header">INGRESA LOS DATOS</h5>
             </center> 
-            <form id="frm_user" action="" method="">
+            <form id="frm_category" action="" method="">
                 <div class="card-body">
                     <div class="mb-3 row">
 
                         <div class="mb-3 row">
-                            <label for="nro_identidad" class="col-sm-4 col-form-label"><strong>nro documento:</strong></label>
+                            <label for="nombre" class="col-sm-4 col-form-label"><strong>nombre:</strong></label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="nro_identidad" name="nro_identidad" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="razon_social" class="col-sm-4 col-form-label"><strong>razon social:</strong></label>
+                            <label for="detalle" class="col-sm-4 col-form-label"><strong>detalle:</strong></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="razon_social" name="razon_social" required>
+                                <textarea class="form-control" name="detalle" id="detalle"></textarea>
+                                <!--
+                                <input type="textarea" class="form-control" id="detalle" name="detalle" required>
+                                -->
                             </div>
+                            <style>
+                                #detalle{
+                                    height: 150px;
+                                }
+                            </style>
                         </div>
-                        <div class="mb-3 row">
-                            <label for="telefono" class="col-sm-4 col-form-label"><strong>telefono:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="telefono" name="telefono" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="correo" class="col-sm-4 col-form-label"><strong>correo:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="email" class="form-control" id="correo" name="correo" required>
-                            </div>
-                        </div>
-
-                        <div class="mb-3 row">
-                            <label for="departamento" class="col-sm-4 col-form-label"><strong>departamento:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="departamento" name="departamento" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="provincia" class="col-sm-4 col-form-label"><strong>provincia:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="provincia" name="provincia" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="distrito" class="col-sm-4 col-form-label"><strong>distrito:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="distrito" name="distrito" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="cod_postal" class="col-sm-4 col-form-label"><strong>cod postal:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="cod_postal" name="cod_postal" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="direccion" class="col-sm-4 col-form-label"><strong>direccion:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="direccion" name="direccion" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="rol" class="col-sm-4 col-form-label"><strong>rol:</strong></label>
-                            <div class="col-sm-8">
-                                <select class="form-control" name="rol" id="rol" required>
-                                    <option value="" disabled selected>seleccione</option>
-                                    <option value="administrador">administrador</option>
-                                    <option value="vendedor">vendedor</option>
-                                </select>
-                            </div>
-                        </div>
+                        
                         <div class="mb-3 row">
                             <label class="col-sm-4 col-form-label"></label>
                             <div class="col-sm-8">
@@ -189,7 +142,7 @@
         </div>
     </div>
 </body>
-<script src="<?php echo BASE_URL; ?>view/funtion/user.js"></script>
+<script src="<?php echo BASE_URL; ?>view/funtion/category.js"></script>
 <script src="<?php echo BASE_URL; ?>view/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- importar sweet aler 2-->

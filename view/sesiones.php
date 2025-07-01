@@ -104,77 +104,44 @@
     <div class="container-fluid">
         <div class="card">
             <center>   
-                <h5 class="card-header">INGRESA TUS DATOS</h5>
+                <h5 class="card-header">INGRESA LOS DATOS</h5>
             </center> 
-            <form id="frm_user" action="" method="">
+            <form id="frm_sesion" action="" method="">
                 <div class="card-body">
                     <div class="mb-3 row">
 
                         <div class="mb-3 row">
-                            <label for="nro_identidad" class="col-sm-4 col-form-label"><strong>nro documento:</strong></label>
+                            <label for="id_persona" class="col-sm-4 col-form-label"><strong>id_persona:</strong></label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="nro_identidad" name="nro_identidad" required>
+                                <input type="number" class="form-control" id="id_persona" name="id_persona" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="razon_social" class="col-sm-4 col-form-label"><strong>razon social:</strong></label>
+                            <label for="fecha_hora_inicio" class="col-sm-4 col-form-label"><strong>fecha_hora_inicio:</strong></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="razon_social" name="razon_social" required>
+                                <input type="datetime" class="form-control" id="fecha_hora_inicio" name="fecha_hora_inicio" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="telefono" class="col-sm-4 col-form-label"><strong>telefono:</strong></label>
+                            <label for="fecha_hora_fin" class="col-sm-4 col-form-label"><strong>fecha_hora_fin:</strong></label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="telefono" name="telefono" required>
+                                <input type="datetime" class="form-control" id="fecha_hora_fin" name="fecha_hora_fin" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="correo" class="col-sm-4 col-form-label"><strong>correo:</strong></label>
+                            <label for="token" class="col-sm-4 col-form-label"><strong>token:</strong></label>
                             <div class="col-sm-8">
-                                <input type="email" class="form-control" id="correo" name="correo" required>
+                                <input type="text" class="form-control" id="token" name="token" required>
                             </div>
                         </div>
 
                         <div class="mb-3 row">
-                            <label for="departamento" class="col-sm-4 col-form-label"><strong>departamento:</strong></label>
+                            <label for="ip" class="col-sm-4 col-form-label"><strong>ip:</strong></label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="departamento" name="departamento" required>
+                                <input type="text" class="form-control" id="ip" name="ip" required>
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <label for="provincia" class="col-sm-4 col-form-label"><strong>provincia:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="provincia" name="provincia" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="distrito" class="col-sm-4 col-form-label"><strong>distrito:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="distrito" name="distrito" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="cod_postal" class="col-sm-4 col-form-label"><strong>cod postal:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="cod_postal" name="cod_postal" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="direccion" class="col-sm-4 col-form-label"><strong>direccion:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="direccion" name="direccion" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="rol" class="col-sm-4 col-form-label"><strong>rol:</strong></label>
-                            <div class="col-sm-8">
-                                <select class="form-control" name="rol" id="rol" required>
-                                    <option value="" disabled selected>seleccione</option>
-                                    <option value="administrador">administrador</option>
-                                    <option value="vendedor">vendedor</option>
-                                </select>
-                            </div>
-                        </div>
+                        
                         <div class="mb-3 row">
                             <label class="col-sm-4 col-form-label"></label>
                             <div class="col-sm-8">
@@ -189,7 +156,7 @@
         </div>
     </div>
 </body>
-<script src="<?php echo BASE_URL; ?>view/funtion/user.js"></script>
+<script src="<?php echo BASE_URL; ?>view/funtion/sesion.js"></script>
 <script src="<?php echo BASE_URL; ?>view/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- importar sweet aler 2-->
