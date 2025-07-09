@@ -20,7 +20,7 @@
 </head>
 <body>
     <center>
-        <h1 style="color: black;">pagina no encontrada 😅🤣 </h1>
+        <h1 style="color: black;">pagina no encontrada 😅🤣</h1>
         <h1>vuelva a interlo mas tarde</h1>
     </center>
 </body>
