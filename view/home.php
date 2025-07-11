@@ -16,6 +16,7 @@
             </center>
             <style>
                 h1 {
+                    background-color: lightseagreen;
                     color: white;
                 }
 
@@ -37,43 +38,62 @@
                     height: 100vh;
                     width: 100vw;
                 }*/
-                
-                img{
-                    width: 200px;
-                    height: 200px;
+
+                img {
+                    width: 300px;
+                    height: 300px;
                 }
-            
             </style>
 
             <div class="home">
                 <section class="principal" style="height: 200px;">
                     <div class="cuadro">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>new-user"><strong>User</strong></a>
-                        <img src="view/img/lena.jpeg" alt="">
+                        <strong>user</strong>
+                        <a href="new-user">
+                            <img src="view/home/user.png" alt="">
+                        </a>
                     </div>
 
                     <div class="cuadro">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>products"><strong>Products</strong></a>
+                        <strong>products</strong>
+                        <a href="products">
+                            <img src="view/home/products.png" alt="">
+                        </a>
                     </div>
 
                     <div class="cuadro">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>category"><strong>Category</strong></a>
+                        <strong>category</strong>
+                        <a href="category">
+                            <img src="view/home/category.png" alt="">
+                        </a>
                     </div>
 
                     <div class="cuadro">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>compras"><strong>Shops</strong></a>
+                        <strong>shops</strong>
+                        <a href="shops">
+                            <img src="view/home/shops.png" alt="">
+                        </a>
                     </div>
 
                     <div class="cuadro">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>detalle_venta"><strong>detalle_venta</strong></a>
+                        <strong>detalle_venta</strong>
+                        <a href="detalle_venta">
+                            <img src="view/home/detalle.png" alt="">
+                        </a>
                     </div>
 
                     <div class="cuadro">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>pagos"><strong>Pagos</strong></a>
+                        <strong>pagos</strong>
+                        <a href="pagos">
+                            <img src="view/home/pagos.png" alt="">
+                        </a>
                     </div>
 
                     <div class="cuadro">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>ventas"><strong>Ventas</strong></a>
+                        <strong>ventas</strong>
+                        <a href="ventas">
+                            <img src="view/home/ventas.png" alt="">
+                        </a>
                     </div>
 
                 </section>
@@ -85,11 +105,12 @@
                     }
 
                     .cuadro {
-                        background-color: greenyellow;
-                        border: 5px black solid;
-                        width: 200px;
-                        height: 200px;
-                        margin: 1%;
+                        background-color: lightseagreen;
+                        /*border: 5px black solid;*/
+                        width: 300px;
+                        height: 300px;
+                        margin-top: 50px;
+                        margin-right: 3%;
                     }
 
                     strong {

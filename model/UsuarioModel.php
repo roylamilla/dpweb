@@ -17,9 +17,17 @@ class UsuarioModel{
         return $sql;
     }
 
+    /*metodo para verificar si existe una persona con el numero de identidad */
     public function existePersona($nro_identidad){
         $consulta = "SELECT* FROM persona where nro_identidad = '$nro_identidad'";
         $sql = $this->conexion->query($consulta);
         return $sql->num_rows;
+    }
+
+    /*metodo para buscar una persona atraves de su numero de identidad */
+    public function buscarPersonaPorNroIdentidad($nro_identidad){
+        $consulta = "SELECT id, razon_social, password from persona where nro_identidad = '$nro_identidad' limit 1;";
+        $sql = $this->conexion->query($consulta);
+        return $sql->fetch_object();
     }
 }
