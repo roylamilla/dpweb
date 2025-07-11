@@ -11,7 +11,7 @@
     </script>
     <style>
         body {
-            background-color: whitesmoke;
+            background-color: blue;
         }
 
         .nav-link {
@@ -40,19 +40,23 @@
         }
 
         #navbarSupportedContent{
-            background-color:rgb(255, 255, 255);
+            background-color:greenyellow;
         }
         #menu{
             border: 2px black solid;
-            background-color:rgb(255, 255, 255);
+            background-color:blue;
         }
+        .card-body{
+            background-color: greenyellow;
+        }
+        
     </style>
 </head>
 
 <body>  
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" id="menu">
-            <a class="navbar-brand" href=""><img src="view/img/lena.jpeg" alt="logo" width="80px" height="80px"></a>
+            <a class="navbar-brand" href=""><img src="view/img/luna.jpg" alt="logo" width="80px" height="80px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
