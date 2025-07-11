@@ -59,7 +59,7 @@ if ($tipo == "iniciar_sesion") {
                 $_SESSION['ventas_usuario']=$persona->razon_social;
                 $respuesta = array('status' => true, 'msg' => 'bienvenido');
             }else {
-                $arrResponse = array('status' => false, 'msg' => 'ERROR: contraseña incorrecta');
+                $respuesta = array('status' => false, 'msg' => 'ERROR: contraseña incorrecta');
             }
         }
     }
