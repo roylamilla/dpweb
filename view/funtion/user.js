@@ -75,6 +75,12 @@ async function iniciar_sesion() {
             cache: 'no-cache',
             body: datos
         });
+        let json = await respuesta.json();
+        if (json.status) {
+            location.replace(base_url+ 'home');
+        } else {
+            alert(json.msg);
+        }
         
     } catch (error) {
         console.log(error);
