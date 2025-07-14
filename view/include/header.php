@@ -97,7 +97,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Perfil</a></li>
-                                <li><a class="dropdown-item" href="#">logout</a></li>
+                                <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>login">logout</a></li>
 
                             </ul>
                         </li>

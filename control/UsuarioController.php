@@ -65,3 +65,4 @@ if ($tipo == "iniciar_sesion") {
     }
     echo json_encode($respuesta);
 }
+
