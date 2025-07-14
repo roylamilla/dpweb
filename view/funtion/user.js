@@ -77,13 +77,32 @@ async function iniciar_sesion() {
         });
         let json = await respuesta.json();
         if (json.status) {
-            location.replace(base_url+ 'home');
+            location.replace(base_url + 'home');
         } else {
             alert(json.msg);
         }
-        
+
     } catch (error) {
         console.log(error);
     }
 }
+
+async function cerrar_sesion() {
+    try {
+        let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=cerrar_sesion', {
+            method: 'GET', // O POST si prefieres más seguridad
+            mode: 'cors',
+            cache: 'no-cache',
+        });
+        let json = await respuesta.json();
+        if (json.status) {
+            location.replace(base_url + 'login'); // Redirige al login u otra página
+        } else {
+            alert("No se pudo cerrar sesión: " + json.msg);
+        }
+    } catch (error) {
+        console.log("Error al cerrar sesión:", error);
+    }
+}
+
 

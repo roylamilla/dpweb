@@ -66,3 +66,15 @@ if ($tipo == "iniciar_sesion") {
     echo json_encode($respuesta);
 }
 
+
+/* para cerrar sesion */
+$tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
+if ($tipo == 'cerrar_sesion') {
+    session_start();
+    session_destroy();
+    echo json_encode(['status' => true, 'msg' => 'Sesión cerrada correctamente']);
+    exit;
+
+}
+
+

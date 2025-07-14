@@ -97,7 +97,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Perfil</a></li>
-                                <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>login">logout</a></li>
+                                <li><button type="button" onclick="cerrar_sesion();">cerrar_sesion</button></li>
 
                             </ul>
                         </li>
