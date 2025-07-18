@@ -87,6 +87,28 @@ async function iniciar_sesion() {
     }
 }
 
+
+/* para ver usuarios registrados */
+async function view_users() {
+    alert("no hay nada");
+    try {
+        let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=ver_usuarios', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache'
+        });
+        
+        
+    } catch (error) {
+
+    }
+}
+if (document.getElementById('content_user')) {
+    view_users();
+}
+
+
+
 async function cerrar_sesion() {
     try {
         let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=cerrar_sesion', {

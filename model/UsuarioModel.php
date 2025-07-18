@@ -30,4 +30,16 @@ class UsuarioModel{
         $sql = $this->conexion->query($consulta);
         return $sql->fetch_object();
     }
+
+    /*metodo para listar */
+    public function verUsuarios(){
+        $arr_usuarios = array();
+        $consulta = "SELECT* from persona";
+        $sql = $this->conexion->query($consulta);
+        while ($objeto = $sql->fetch_object()) {
+            array_push($arr_usuarios, $objeto);
+        }
+        return $arr_usuarios;
+    }
+    
 }

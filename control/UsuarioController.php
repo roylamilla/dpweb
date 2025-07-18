@@ -67,6 +67,16 @@ if ($tipo == "iniciar_sesion") {
 }
 
 
+/* ver usuarios registrados*/
+if ($tipo == "ver_usuarios") {
+    $usuarios = $objPersona->verUsuarios();
+    echo json_encode($usuarios);
+}
+
+
+
+
+
 /* para cerrar sesion */
 $tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
 if ($tipo == 'cerrar_sesion') {

@@ -11,7 +11,7 @@
     </script>
     <style>
         body {
-            background-color: blue;
+            background: linear-gradient(to right, #ff0000ff, #0011ffff);
         }
 
         .nav-link {
@@ -40,14 +40,27 @@
         }
 
         #navbarSupportedContent{
-            background-color:greenyellow;
+            background: linear-gradient(to right, #ff0000ff, #0011ffff);
         }
         #menu{
             border: 2px black solid;
-            background-color:blue;
+            background: linear-gradient(to right, #0011ffff, #ff0000ff);
         }
         .card-body{
-            background-color: greenyellow;
+            background: linear-gradient(to right, #0011ffff, #ff0000ff);
+        }
+        
+        strong{
+            color: white;
+        }
+
+        .btn{
+            border: 2px white solid;
+        }
+        
+        .nav-link{
+            font-family: fantasy;
+            color: white;
         }
         
     </style>
@@ -56,7 +69,7 @@
 <body>  
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" id="menu">
-            <a class="navbar-brand" href=""><img src="view/img/luna.jpg" alt="logo" width="80px" height="80px"></a>
+            <a class="navbar-brand" href=""><img src="view/img/logo1.png" alt="logo" width="80px" height="80px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -66,7 +79,7 @@
                         <a class="nav-link " aria-current="page" href="<?php echo BASE_URL; ?>home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>new-user">User</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>users">Users</a>
                         <!--
                         <a href="<?php echo BASE_URL; ?>new-user">User</a>
                         -->

@@ -80,6 +80,7 @@
                                 <button type="submit" class="btn btn-primary">Registrar</button>
                                 <button type="reset" class="btn btn-warning">Limpiar</button>
                                 <button type="button" class="btn btn-danger">Cancelar</button>
+                            
                             </div>
                         </div>
                     </div>

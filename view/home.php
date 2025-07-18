@@ -49,7 +49,7 @@
                 <section class="principal" style="height: 200px;">
                     <div class="cuadro">
                         <strong>user</strong>
-                        <a href="new-user">
+                        <a href="users">
                             <img src="view/home/user.png" alt="">
                         </a>
                     </div>
