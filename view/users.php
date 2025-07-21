@@ -1,5 +1,20 @@
 <div class="container">
-    <h3 class="mt-3" style="color: white;">LISTA DE USUARIOS</h3>
+    <div class="arriba">
+        <h3 class="mt-3" style="color: white;">LISTA DE USUARIOS</h3>
+        <h3 class="new-user">
+            <a class="nav-link" href="<?php echo BASE_URL; ?>products">new user</a>
+        </h3>
+    </div>
+    <style>
+        .arriba{
+            gap: 5rem;
+            display: flex;
+        }
+        .new-user{
+            margin-top: 15px;
+        }
+    </style>
+
     <table class="table table-bordered table-striped">
         <thead>
             <tr class="text-center">

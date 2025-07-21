@@ -90,7 +90,7 @@ async function iniciar_sesion() {
 
 /* para ver usuarios registrados */
 async function view_users() {
-    alert("no hay nada");
+
     try {
         let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=ver_usuarios', {
             method: 'POST',
@@ -98,9 +98,24 @@ async function view_users() {
             cache: 'no-cache'
         });
         
-        
-    } catch (error) {
+        let json = await respuesta.json();
+        let content_users = document.getElementById('content_user');
+        content_users.innerHTML = ''; // limpiamos antes de insertar
 
+        json.forEach((user, index) => {
+            let fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${user.nro_identidad}</td>
+                <td>${user.razon_social}</td>
+                <td>${user.correo}</td>
+                <td>${user.rol}</td>
+                <td>${user.estado}</td>
+            `;
+            content_users.appendChild(fila);
+        })
+    } catch (error) {
+        console.log('Error al obtener usuarios, No hay nada: ' + error);
     }
 }
 if (document.getElementById('content_user')) {
@@ -109,6 +124,7 @@ if (document.getElementById('content_user')) {
 
 
 
+/*para cerrar sesion */
 async function cerrar_sesion() {
     try {
         let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=cerrar_sesion', {

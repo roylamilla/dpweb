@@ -69,7 +69,7 @@
                             <div class="col-sm-8">
                                 <select class="form-control" name="rol" id="rol" required>
                                     <option value="" disabled selected>seleccione</option>
-                                    <option value="administrador">administrador</option>
+                                    <option value="admin">administrador</option>
                                     <option value="vendedor">vendedor</option>
                                 </select>
                             </div>
