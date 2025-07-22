@@ -24,6 +24,7 @@
                 <th class="bg-white">Correo</th>
                 <th class="bg-white">Rol</th>
                 <th class="bg-white">Estado</th>
+                <th class="bg-white">Acciones</th>
             </tr>
         </thead>
         <tbody id="content_user">
@@ -34,12 +35,3 @@
 <script src="<?php echo BASE_URL; ?>view/funtion/user.js"></script>
 <!--
 <script>view_users();</script>-->
-
-<!-- On cells (`td` or `th`) 
-<tr>
-    <td class="bg-primary">...</td>
-    <td class="bg-success">...</td>
-    <td class="bg-warning">...</td>
-    <td class="bg-danger">...</td>
-    <td class="bg-info">...</td>
-</tr> -->

@@ -90,14 +90,13 @@ async function iniciar_sesion() {
 
 /* para ver usuarios registrados */
 async function view_users() {
-
     try {
         let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=ver_usuarios', {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache'
         });
-        
+
         let json = await respuesta.json();
         let content_users = document.getElementById('content_user');
         content_users.innerHTML = ''; // limpiamos antes de insertar
@@ -111,7 +110,11 @@ async function view_users() {
                 <td>${user.correo}</td>
                 <td>${user.rol}</td>
                 <td>${user.estado}</td>
+                <td>
+                    <a href="`+ base_url + `edit_user/`+user.id+`">Editar</a>
+                </td>
             `;
+            
             content_users.appendChild(fila);
         })
     } catch (error) {
