@@ -12,6 +12,7 @@
         }
         .new-user{
             margin-top: 15px;
+            color: white;
         }
     </style>
 

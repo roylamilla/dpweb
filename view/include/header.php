@@ -69,7 +69,7 @@
 <body>  
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" id="menu">
-            <a class="navbar-brand" href=""><img src="view/img/LR.png" alt="logo" width="80px" height="80px"></a>
+            <a class="navbar-brand" href=""><h1 style="color: white;">LR</h1></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
