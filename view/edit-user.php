@@ -12,7 +12,7 @@
             }
             ?>
             <form id="frm_edit_user" action="" method="">
-                <input type="hiddens" id="id_persona" name="id_persona" value="<?= $ruta[1]; ?>">
+                <input type="hidden" id="id_persona" name="id_persona" value="<?= $ruta[1]; ?>">
                 <div class="card-body">
                     <div class="mb-3 row">
 
