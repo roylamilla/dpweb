@@ -11,7 +11,8 @@
     </script>
     <style>
         body {
-            background: linear-gradient(to right, #ff0000ff, #0011ffff);
+            /*background: linear-gradient(to right, #ff0000ff, #0011ffff);*/
+            background: wheat;
         }
 
         .nav-link {
@@ -40,14 +41,14 @@
         }
 
         #navbarSupportedContent{
-            background: linear-gradient(to right, #ff0000ff, #0011ffff);
+            background: linear-gradient(to right, #2fd129ff, #0996f5ff);
         }
         #menu{
             border: 2px black solid;
-            background: linear-gradient(to right, #0011ffff, #ff0000ff);
+            background: linear-gradient(to right, #4615f7ff, #fc47deff);
         }
         .card-body{
-            background: linear-gradient(to right, #0011ffff, #ff0000ff);
+            background: linear-gradient(to right, #2fd129ff, #0996f5ff);
         }
         
         strong{

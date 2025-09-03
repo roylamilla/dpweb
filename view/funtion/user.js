@@ -1,4 +1,4 @@
-function validar_form() {
+function validar_form(tipo) {
     let nro_identidad = document.getElementById("nro_identidad").value;
     let razon_social = document.getElementById("razon_social").value;
     let telefono = document.getElementById("telefono").value;
@@ -20,7 +20,12 @@ function validar_form() {
         });
         return;
     }
-    registrarUsuario();
+    if (tipo == "nuevo") {
+        registrarUsuario();
+    }
+    if (tipo == "actualizar") {
+        actualizarUsuario();
+    }
 
 
 }
@@ -30,7 +35,7 @@ if (document.querySelector('#frm_user')) {
     let frm_user = document.querySelector('#frm_user');
     frm_user.onsubmit = function (e) {
         e.preventDefault();
-        validar_form();
+        validar_form("nuevo");
     }
 }
 
@@ -111,10 +116,10 @@ async function view_users() {
                 <td>${user.rol}</td>
                 <td>${user.estado}</td>
                 <td>
-                    <a href="`+ base_url + `edit-user/`+user.id+`">Editar</a>
+                    <a href="`+ base_url + `edit-user/` + user.id + `">Editar</a>
                 </td>
             `;
-            
+
             content_users.appendChild(fila);
         })
     } catch (error) {
@@ -133,11 +138,11 @@ async function edit_user() {
         datos.append('id_persona', id_persona);
 
         let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=ver', {
-            method: 'POST', 
+            method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
             body: datos
-        });    
+        });
         json = await respuesta.json();
         if (!json.status) {
             alert(json.msg);
@@ -158,6 +163,19 @@ async function edit_user() {
     } catch (error) {
         console.log('oops, ocurrio un error ' + error);
     }
+}
+
+if (document.querySelector('#frm_edit_user')) {
+    //evita que se envie el formulario
+    let frm_user = document.querySelector('#frm_edit_user');
+    frm_user.onsubmit = function (e) {
+        e.preventDefault();
+        validar_form("actualizar");
+    }
+}
+
+async function actualizarUsuario() {
+    alert('actualizar');
 }
 
 
