@@ -83,17 +83,10 @@
                         </div>
 
                         <div class="mb-3 row">
-                            <label for="estado" class="col-sm-4 col-form-label"><strong>estado:</strong></label>
-                            <div class="col-sm-8">
-                                <input type="number" class="form-control" id="estado" name="estado" required>
-                            </div>
-                        </div>
-
-                        <div class="mb-3 row">
                             <label class="col-sm-4 col-form-label"></label>
                             <div class="col-sm-8">
                                 <button type="submit" class="btn btn-primary">Actualizar</button>
-                                <a href="<?=BASE_URL ?>users" class="btn btn-danger">Cancelar</a>
+                                <a href="<?=BASE_URL ?>users" class="btn btn-warning">Cancelar</a>
                             </div>
                         </div>
                     </div>

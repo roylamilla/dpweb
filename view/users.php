@@ -2,15 +2,16 @@
     <div class="arriba">
         <h3 class="mt-3" style="color: white;">LISTA DE USUARIOS</h3>
         <h3 class="new-user">
-            <a class="nav-link" href="<?php echo BASE_URL; ?>products">new user</a>
+            <a class="nav-link" href="<?php echo BASE_URL; ?>new-user">new user</a>
         </h3>
     </div>
     <style>
-        .arriba{
+        .arriba {
             gap: 5rem;
             display: flex;
         }
-        .new-user{
+
+        .new-user {
             margin-top: 15px;
             color: white;
         }
@@ -32,6 +33,7 @@
 
         </tbody>
     </table>
+    
 </div>
 <script src="<?php echo BASE_URL; ?>view/funtion/user.js"></script>
 <!--

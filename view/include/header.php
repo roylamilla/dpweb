@@ -41,7 +41,7 @@
         }
 
         #navbarSupportedContent{
-            background: linear-gradient(to right, #2fd129ff, #0996f5ff);
+            background: linear-gradient(to right, #4615f7ff, #fc47deff);
         }
         #menu{
             border: 2px black solid;

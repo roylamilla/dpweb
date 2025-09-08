@@ -39,26 +39,25 @@ if ($tipo == "registrar") {
         }
     }
     echo json_encode($arrResponse);
-   
 }
 /* para iniciar sesion*/
 if ($tipo == "iniciar_sesion") {
     $nro_identidad = $_POST['username'];
     $password = $_POST['password'];
-    if ($nro_identidad== "" || $password== "") {
+    if ($nro_identidad == "" || $password == "") {
         $respuesta = array('status' => false, 'msg' => 'ERROR: campos vacios');
-    }else {
-        $existePersona= $objPersona->existePersona($nro_identidad);
+    } else {
+        $existePersona = $objPersona->existePersona($nro_identidad);
         if (!$existePersona) {
             $respuesta = array('status' => false, 'msg' => 'ERROR: usuario no registrado');
-        }else {
-            $persona = $objPersona->buscarPersonaPorNroIdentidad($nro_identidad); 
-            if (password_verify($password,$persona->password)) {
+        } else {
+            $persona = $objPersona->buscarPersonaPorNroIdentidad($nro_identidad);
+            if (password_verify($password, $persona->password)) {
                 session_start();
-                $_SESSION['ventas_id']=$persona->id;
-                $_SESSION['ventas_usuario']=$persona->razon_social;
+                $_SESSION['ventas_id'] = $persona->id;
+                $_SESSION['ventas_usuario'] = $persona->razon_social;
                 $respuesta = array('status' => true, 'msg' => 'bienvenido');
-            }else {
+            } else {
                 $respuesta = array('status' => false, 'msg' => 'ERROR: contraseña incorrecta');
             }
         }
@@ -75,29 +74,83 @@ if ($tipo == "ver_usuarios") {
 
 
 /*ver para editar */
-if ($tipo== "ver") {
+if ($tipo == "ver") {
     //print_r($_POST);
-    $respuesta = array('status'=>false, 'msg'=> '');
+    $respuesta = array('status' => false, 'msg' => '');
     $id_persona = $_POST['id_persona'];
     $usuario = $objPersona->ver($id_persona);
     if ($usuario) {
         $respuesta['status'] = true;
         $respuesta['data'] = $usuario;
-    }else {
+    } else {
         $respuesta['msg'] = 'Error, usuario no existe';
     }
     echo json_encode($respuesta);
 }
 
+/*para actualizar*/
+if ($tipo == "actualizar") {
+    //print_r($_POST);
+    $id_persona = $_POST['id_persona'];
+    $nro_identidad =  $_POST['nro_identidad'];
+    $razon_social =  $_POST['razon_social'];
+    $telefono =  $_POST['telefono'];
+    $correo =  $_POST['correo'];
+    $departamento =  $_POST['departamento'];
+    $provincia =  $_POST['provincia'];
+    $distrito =  $_POST['distrito'];
+    $cod_postal =  $_POST['cod_postal'];
+    $direccion =  $_POST['direccion'];
+    $rol =  $_POST['rol'];
+    if ($id_persona == "" || $nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" || $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" || $direccion == "" || $rol == "") {
 
-/* para cerrar sesion */
-$tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
-if ($tipo == 'cerrar_sesion') {
-    session_start();
-    session_destroy();
-    echo json_encode(['status' => true, 'msg' => 'Sesión cerrada correctamente']);
-    exit;
+        $arrResponse = array('status' => false, 'msg' => 'Error, campos vacios');
+    } else {
+        $existeID = $objPersona->ver($id_persona);
+        if (!$existeID) {
+            //devolver respuesta
+            $arrResponse = array('status' => false, 'msg' => 'Error, usuario no existe en BD');
+            echo json_encode($arrResponse);
+            //cerrar funcion
+            exit;
+        } else {
+            //actualizar
+            $actualizar = $objPersona->actualizar($id_persona, $nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $cod_postal, $direccion, $rol);
+            if ($actualizar) {
+                $arrResponse = array('status' => true, 'msg' => "Actualizado correctamente");
+            } else {
+                $arrResponse = array('status' => false, 'msg' => $actualizar);
+            }
+            echo json_encode($arrResponse);
+            exit;
+        }
+    }
 
+
+
+    /*para eliminar */
+    if ($tipo == "eliminar") {
+        $id_persona = $_POST['id_persona'];
+        $respuesta = array('status' => false, 'msg' => '');
+        $resultado = $objPersona->eliminar($id_persona);
+        if ($resultado) {
+            $respuesta = array('status' => true, 'msg' => 'eliminado correctamente');
+        }else{
+            $respuesta = array('status' => false, 'msg' =>$resultado);
+        }
+        echo json_encode($respuesta)
+
+
+    
+
+
+
+    /* para cerrar sesion */
+    $tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
+    if ($tipo == 'cerrar_sesion') {
+        session_start();
+        session_destroy();
+        echo json_encode(['status' => true, 'msg' => 'Sesión cerrada correctamente']);
+        exit;
+    }
 }
-
-
