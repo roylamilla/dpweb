@@ -12,7 +12,7 @@
     <style>
         body {
             /*background: linear-gradient(to right, #ff0000ff, #0011ffff);*/
-            background: wheat;
+            background-image: url("view/img/fond.jpg");
         }
 
         .nav-link {
@@ -48,7 +48,7 @@
             background: linear-gradient(to right, #4615f7ff, #fc47deff);
         }
         .card-body{
-            background: linear-gradient(to right, #2fd129ff, #0996f5ff);
+            background: linear-gradient(to right, #2fd129, #0996f5ff);
         }
         
         strong{

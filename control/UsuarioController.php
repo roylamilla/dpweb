@@ -125,32 +125,40 @@ if ($tipo == "actualizar") {
             exit;
         }
     }
+}
 
 
+// Metodo para Elimar datos de Usuario
+if ($tipo == "eliminar") {
+    // El JS envía 'id', no 'id_persona'
+    $id_persona = isset($_POST['id']) ? $_POST['id'] : '';
 
-    /*para eliminar */
-    if ($tipo == "eliminar") {
-        $id_persona = $_POST['id_persona'];
-        $respuesta = array('status' => false, 'msg' => '');
-        $resultado = $objPersona->eliminar($id_persona);
-        if ($resultado) {
-            $respuesta = array('status' => true, 'msg' => 'eliminado correctamente');
-        }else{
-            $respuesta = array('status' => false, 'msg' =>$resultado);
+    if ($id_persona == "") {
+        $arrResponse = array('status' => false, 'msg' => 'Error, ID vacío');
+    } else {
+        $existeId = $objPersona->ver($id_persona);
+        if (!$existeId) {
+            $arrResponse = array('status' => false, 'msg' => 'Error, usuario no existe en Base de Datos!!');
+        } else {
+            $eliminar = $objPersona->eliminar($id_persona);
+            if ($eliminar) {
+                $arrResponse = array('status' => true, 'msg' => "Eliminado correctamente");
+            } else {
+                $arrResponse = array('status' => false, 'msg' => 'Error al eliminar');
+            }
         }
-        echo json_encode($respuesta)
-
-
-    
-
-
-
-    /* para cerrar sesion */
-    $tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
-    if ($tipo == 'cerrar_sesion') {
-        session_start();
-        session_destroy();
-        echo json_encode(['status' => true, 'msg' => 'Sesión cerrada correctamente']);
-        exit;
     }
+    echo json_encode($arrResponse);
+    exit;
+}
+
+
+
+/* para cerrar sesion */
+$tipo = isset($_GET['tipo']) ? $_GET['tipo'] : '';
+if ($tipo == 'cerrar_sesion') {
+    session_start();
+    session_destroy();
+    echo json_encode(['status' => true, 'msg' => 'Sesión cerrada correctamente']);
+    exit;
 }

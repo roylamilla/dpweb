@@ -79,8 +79,8 @@
                             <div class="col-sm-8">
                                 <button type="submit" class="btn btn-primary">Registrar</button>
                                 <button type="reset" class="btn btn-warning">Limpiar</button>
-                                <button type="button" class="btn btn-danger">Cancelar</button>
-                            
+                                <!--<button type="button" class="btn btn-danger">Cancelar</button>-->
+                                <a href="<?=BASE_URL ?>users" class="btn btn-danger">Cancelar</a>
                             </div>
                         </div>
                     </div>

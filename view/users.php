@@ -13,27 +13,33 @@
 
         .new-user {
             margin-top: 15px;
+        }
+
+        .nav-link {
             color: white;
         }
+       
     </style>
 
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr class="text-center">
-                <th class="bg-white">Nro</th>
-                <th class="bg-white">DNI</th>
-                <th class="bg-white">Nombres y apellidos</th>
-                <th class="bg-white">Correo</th>
-                <th class="bg-white">Rol</th>
-                <th class="bg-white">Estado</th>
-                <th class="bg-white">Acciones</th>
-            </tr>
-        </thead>
-        <tbody id="content_user">
+    <div class="responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th class="bg-white">Nro</th>
+                    <th class="bg-white">DNI</th>
+                    <th class="bg-white">Nombres y apellidos</th>
+                    <th class="bg-white">Correo</th>
+                    <th class="bg-white">Rol</th>
+                    <th class="bg-white">Estado</th>
+                    <th class="bg-white">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="content_user">
 
-        </tbody>
-    </table>
-    
+            </tbody>
+        </table>
+    </div>
+
 </div>
 <script src="<?php echo BASE_URL; ?>view/funtion/user.js"></script>
 <!--

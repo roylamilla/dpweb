@@ -116,15 +116,37 @@ async function view_users() {
                 <td>${user.rol}</td>
                 <td>${user.estado}</td>
                 <td>
-                    <a href="`+ base_url + `edit-user/` + user.id + `">Editar</a>
+                    <a href="`+ base_url + `edit-user/` + user.id + `" class="btn btn-success">Editar</a>
                     <br>
-                    <button type="button" class="btn btn-danger" onclick="fn_eliminar(`+ usuario.id + `);">Eliminar</button>
+                    <button data-id="${user.id}" class="btn btn-eliminar btn-danger">Eliminar</button>
                 </td>
                 
             `;
 
             content_users.appendChild(fila);
-        })
+        });
+
+        // Agrega el evento click a los botones de eliminar
+        document.querySelectorAll('.btn-eliminar').forEach(btn => {
+            btn.addEventListener('click', async function () {
+                if (confirm('¿Está seguro de eliminar este usuario?')) {
+                    const datos = new FormData();
+                    datos.append('id', this.getAttribute('data-id'));
+                    let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=eliminar', {
+                        method: 'POST',
+                        mode: 'cors',
+                        cache: 'no-cache',
+                        body: datos
+                    });
+                    let json = await respuesta.json();
+                    alert(json.msg);
+                    if (json.status) {
+                        view_users(); // Recarga la lista
+                    }
+                }
+            });
+        });
+
     } catch (error) {
         console.log('Error al obtener usuarios, No hay nada: ' + error);
     }
@@ -217,18 +239,11 @@ async function eliminar(id) {
         alert("");
         console.log(json.msg);
         return;
-    }else{
+    } else {
         alert(json.msg)
         location.replace(base_url + 'users');
     }
 }
-
-
-
-
-
-
-
 
 
 

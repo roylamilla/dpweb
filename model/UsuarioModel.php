@@ -57,10 +57,10 @@ class UsuarioModel{
     }
 
     //metodo para eliminar
-    public function eliminar($id){
-        $consulta = "DELETE FROM persona WHERE id = '$id'";
+     public function eliminar($id_persona)
+    {
+        $consulta = "DELETE FROM persona WHERE id='$id_persona'";
         $sql = $this->conexion->query($consulta);
         return $sql;
-
     }
 }
