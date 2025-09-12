@@ -22,4 +22,23 @@ class ProductoModel{
         $sql = $this->conexion->query($consulta);
         return $sql->num_rows;
     }
+
+    /*metodo para listar */
+    public function verProductos(){
+        $arr_productos = array();
+        $consulta = "SELECT* from producto";
+        $sql = $this->conexion->query($consulta);
+        while ($objeto = $sql->fetch_object()) {
+            array_push($arr_productos, $objeto);
+        }
+        return $arr_productos;
+    }
+
+
+    /*metodo para ver  */
+    public function ver($id){
+        $consulta = "SELECT * FROM producto WHERE id='$id'";
+        $sql = $this->conexion->query($consulta);
+        return $sql->fetch_object();
+    }
 }

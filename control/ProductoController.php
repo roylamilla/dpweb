@@ -22,7 +22,7 @@ if ($tipo == "registrar") {
 
         $arrResponse = array('status' => false, 'msg' => 'Error, campos vacios');
     } else {
-        // validar si existe persona con el mismo nro_documento
+        // validar si existe producto con el mismo 
         $existeProducto = $objProducto->existeProducto($codigo);
         if ($existeProducto > 0) {
             $arrResponse = array('status' => false, 'msg' => 'Error: codigo ya existe');
@@ -36,4 +36,11 @@ if ($tipo == "registrar") {
         }
     }
     echo json_encode($arrResponse);
+}
+
+
+/* ver productos registrados*/
+if ($tipo == "ver_productos") {
+    $usuarios = $objPersona->verUsuarios();
+    echo json_encode($usuarios);
 }

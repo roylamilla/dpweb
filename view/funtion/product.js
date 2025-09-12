@@ -57,3 +57,65 @@ async function registrarProducto() {
     }
 }
 
+ // Mostrar productos
+async function view_products() {
+    try {
+        let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=ver_productos', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache'
+        });
+
+        let json = await respuesta.json();
+        let content_users = document.getElementById('content_products');
+        content_users.innerHTML = ''; // limpiamos antes de insertar
+
+        json.forEach((user, index) => {
+            let fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${products.codigo}</td>
+                <td>${products.nombre}</td>
+                <td>${products.detalle}</td>
+                <td>${products.precio}</td>
+                <td>${products.stock}</td>
+                <td>${products.fecha_vencimiento}</td>
+                <td>
+                    <a href="`+ base_url + `edit-user/` + user.id + `" class="btn btn-success">Editar</a>
+                    <br>
+                    <button data-id="${user.id}" class="btn btn-eliminar btn-danger">Eliminar</button>
+                </td>
+                
+            `;
+
+            content_users.appendChild(fila);
+        });
+
+        // Agrega el evento click a los botones de eliminar
+        document.querySelectorAll('.btn-eliminar').forEach(btn => {
+            btn.addEventListener('click', async function () {
+                if (confirm('¿Está seguro de eliminar este usuario?')) {
+                    const datos = new FormData();
+                    datos.append('id', this.getAttribute('data-id'));
+                    let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=eliminar', {
+                        method: 'POST',
+                        mode: 'cors',
+                        cache: 'no-cache',
+                        body: datos
+                    });
+                    let json = await respuesta.json();
+                    alert(json.msg);
+                    if (json.status) {
+                        view_users(); // Recarga la lista
+                    }
+                }
+            });
+        });
+
+    } catch (error) {
+        console.log('Error al obtener usuarios, No hay nada: ' + error);
+    }
+}
+if (document.getElementById('content_user')) {
+    view_users();
+}
