@@ -53,7 +53,7 @@ async function registrarProducto() {
         }
 
     } catch (error) {
-        console.log("Error al registrar usuario:" + error);
+        console.log("Error al registrar producto:" + error);
     }
 }
 
@@ -70,7 +70,7 @@ async function view_products() {
         let content_users = document.getElementById('content_products');
         content_users.innerHTML = ''; // limpiamos antes de insertar
 
-        json.forEach((user, index) => {
+        json.forEach((products, index) => {
             let fila = document.createElement('tr');
             fila.innerHTML = `
                 <td>${index + 1}</td>
@@ -81,7 +81,7 @@ async function view_products() {
                 <td>${products.stock}</td>
                 <td>${products.fecha_vencimiento}</td>
                 <td>
-                    <a href="`+ base_url + `edit-user/` + user.id + `" class="btn btn-success">Editar</a>
+                    <a href="`+ base_url + `edit-product/` + user.id + `" class="btn btn-success">Editar</a>
                     <br>
                     <button data-id="${user.id}" class="btn btn-eliminar btn-danger">Eliminar</button>
                 </td>
@@ -94,10 +94,10 @@ async function view_products() {
         // Agrega el evento click a los botones de eliminar
         document.querySelectorAll('.btn-eliminar').forEach(btn => {
             btn.addEventListener('click', async function () {
-                if (confirm('¿Está seguro de eliminar este usuario?')) {
+                if (confirm('¿Está seguro de eliminar este producto?')) {
                     const datos = new FormData();
                     datos.append('id', this.getAttribute('data-id'));
-                    let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=eliminar', {
+                    let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=eliminar', {
                         method: 'POST',
                         mode: 'cors',
                         cache: 'no-cache',
@@ -113,9 +113,9 @@ async function view_products() {
         });
 
     } catch (error) {
-        console.log('Error al obtener usuarios, No hay nada: ' + error);
+        console.log('Error al obtener productos, No hay nada: ' + error);
     }
 }
-if (document.getElementById('content_user')) {
-    view_users();
+if (document.getElementById('content_products')) {
+    view_products();
 }
