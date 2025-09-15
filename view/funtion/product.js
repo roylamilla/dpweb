@@ -56,8 +56,9 @@ async function registrarProducto() {
         console.log("Error al registrar producto:" + error);
     }
 }
+//
 
- // Mostrar productos
+/* para ver productos registrados */
 async function view_products() {
     try {
         let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=ver_productos', {
@@ -67,28 +68,26 @@ async function view_products() {
         });
 
         let json = await respuesta.json();
-        let content_users = document.getElementById('content_products');
-        content_users.innerHTML = ''; // limpiamos antes de insertar
+        let content_products = document.getElementById('content_product');
+        content_products.innerHTML = ''; // limpiamos antes de insertar
 
-        json.forEach((products, index) => {
+        json.forEach((product, index) => {
             let fila = document.createElement('tr');
             fila.innerHTML = `
                 <td>${index + 1}</td>
-                <td>${products.codigo}</td>
-                <td>${products.nombre}</td>
-                <td>${products.detalle}</td>
-                <td>${products.precio}</td>
-                <td>${products.stock}</td>
-                <td>${products.fecha_vencimiento}</td>
+                <td>${product.codigo}</td>
+                <td>${product.nombre}</td>
+                <td>${product.detalle}</td>
+                <td>$${parseFloat(product.precio).toFixed(2)}</td>
+                <td>${product.stock}</td>
                 <td>
-                    <a href="`+ base_url + `edit-product/` + user.id + `" class="btn btn-success">Editar</a>
+                    <a href="${base_url}edit-products/${product.id}" class="btn btn-success">Editar</a>
                     <br>
-                    <button data-id="${user.id}" class="btn btn-eliminar btn-danger">Eliminar</button>
+                    <button data-id="${product.id}" class="btn btn-eliminar btn-danger">Eliminar</button>
                 </td>
-                
             `;
 
-            content_users.appendChild(fila);
+            content_products.appendChild(fila);
         });
 
         // Agrega el evento click a los botones de eliminar
@@ -106,16 +105,115 @@ async function view_products() {
                     let json = await respuesta.json();
                     alert(json.msg);
                     if (json.status) {
-                        view_users(); // Recarga la lista
+                        view_products(); // Recarga la lista
                     }
                 }
             });
         });
 
     } catch (error) {
-        console.log('Error al obtener productos, No hay nada: ' + error);
+        console.log('Error al obtener productos: ' + error);
     }
 }
-if (document.getElementById('content_products')) {
+
+// Cargar productos al cargar la página
+if (document.getElementById('content_product')) {
     view_products();
+}
+
+/* para editar producto */
+async function edit_product() {
+    try {
+        let id_producto = document.getElementById('id_producto').value;
+        const datos = new FormData();
+        datos.append('id_producto', id_producto);
+
+        let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=ver', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: datos
+        });
+        
+        let json = await respuesta.json();
+        if (!json.status) {
+            alert(json.msg);
+            return;
+        }
+        
+        // Llenar el formulario con los datos del producto
+        document.getElementById('codigo').value = json.data.codigo;
+        document.getElementById('nombre').value = json.data.nombre;
+        document.getElementById('detalle').value = json.data.detalle;
+        document.getElementById('precio').value = json.data.precio;
+        document.getElementById('stock').value = json.data.stock;
+
+    } catch (error) {
+        console.log('Error al cargar producto: ' + error);
+    }
+}
+
+// Evento para formulario de edición
+if (document.querySelector('#frm_edit_product')) {
+    let frm_product = document.querySelector('#frm_edit_product');
+    frm_product.onsubmit = function (e) {
+        e.preventDefault();
+        validar_form_producto("actualizar");
+    }
+}
+
+// Validar y actualizar producto
+async function validar_form_producto(accion) {
+    // Aquí puedes agregar validaciones
+    if (accion === "actualizar") {
+        await actualizarProducto();
+    }
+}
+
+// Actualizar producto
+async function actualizarProducto() {
+    const datos = new FormData(document.getElementById('frm_edit_product'));
+    let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=actualizar', {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        body: datos
+    });
+    
+    let json = await respuesta.json();
+    if (!json.status) {
+        alert("Error al actualizar producto: " + json.msg);
+        return;
+    } else {
+        alert(json.msg);
+        window.location.href = base_url + 'products';
+    }
+}
+
+// Para crear nuevo producto
+if (document.querySelector('#frm_new_product')) {
+    let frm_new_product = document.querySelector('#frm_new_product');
+    frm_new_product.onsubmit = function (e) {
+        e.preventDefault();
+        crearProducto();
+    }
+}
+
+async function crearProducto() {
+    const datos = new FormData(document.getElementById('frm_new_product'));
+    let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=crear', {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        body: datos
+    });
+    
+    let json = await respuesta.json();
+    if (!json.status) {
+        alert("Error al crear producto: " + json.msg);
+        return;
+    } else {
+        alert(json.msg);
+        window.location.href = base_url + 'products';
+    }
 }
