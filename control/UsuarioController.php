@@ -30,7 +30,7 @@ if ($tipo == "registrar") {
         if ($existePersona > 0) {
             $arrResponse = array('status' => false, 'msg' => 'Error: nro documento ya existe');
         } else {
-            $respuesta = $objPersona->registrar($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito,       $cod_postal, $direccion, $rol, $password);
+            $respuesta = $objPersona->registrar($nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $cod_postal, $direccion, $rol, $password);
             if ($respuesta) {
                 $arrResponse = array('status' => true, 'msg' => 'REGISTRADO CORRECTAMENTE');
             } else {

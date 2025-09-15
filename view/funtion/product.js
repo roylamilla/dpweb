@@ -1,15 +1,15 @@
-function validar_form() {
+function validar_form(tipo) {
     let codigo = document.getElementById("codigo").value;
     let nombre = document.getElementById("nombre").value;
     let detalle = document.getElementById("detalle").value;
     let precio = document.getElementById("precio").value;
     let stock = document.getElementById("stock").value;
     let id_categoria = document.getElementById("id_categoria").value;
+    let fecha_vencimiento = document.getElementById("fecha_vencimiento").value;
     let imagen = document.getElementById("imagen").value;
     let id_proveedor = document.getElementById("id_proveedor").value;
-    ;
 
-    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || id_categoria == "" || imagen == "" || id_proveedor == "") {
+    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || id_categoria == "" || fecha_vencimiento == "" || imagen == "" || id_proveedor == "") {
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -19,7 +19,12 @@ function validar_form() {
         });
         return;
     }
-    registrarProducto();
+    if (tipo == "nuevo") {
+        registrarProducto();
+    }
+    if (tipo == "actualizar") {
+        actualizarProducto();
+    }
 
 
 }
@@ -29,7 +34,7 @@ if (document.querySelector('#frm_products')) {
     let frm_products = document.querySelector('#frm_products');
     frm_products.onsubmit = function (e) {
         e.preventDefault();
-        validar_form();
+        validar_form("nuevo");
     }
 }
 
@@ -78,10 +83,13 @@ async function view_products() {
                 <td>${product.codigo}</td>
                 <td>${product.nombre}</td>
                 <td>${product.detalle}</td>
-                <td>$${parseFloat(product.precio).toFixed(2)}</td>
+                <td>${product.precio}</td>
                 <td>${product.stock}</td>
+                <td>${product.id_categoria}</td>
+                <td>${product.fecha_vencimiento}</td>
+                <td>${product.id_proveedor}</td>
                 <td>
-                    <a href="${base_url}edit-products/${product.id}" class="btn btn-success">Editar</a>
+                    <a href="` + base_url + `edit-products/` + product.id + `" class="btn btn-success">Editar</a>
                     <br>
                     <button data-id="${product.id}" class="btn btn-eliminar btn-danger">Eliminar</button>
                 </td>
@@ -134,19 +142,22 @@ async function edit_product() {
             cache: 'no-cache',
             body: datos
         });
-        
+
         let json = await respuesta.json();
         if (!json.status) {
             alert(json.msg);
             return;
         }
-        
+
         // Llenar el formulario con los datos del producto
         document.getElementById('codigo').value = json.data.codigo;
         document.getElementById('nombre').value = json.data.nombre;
         document.getElementById('detalle').value = json.data.detalle;
         document.getElementById('precio').value = json.data.precio;
         document.getElementById('stock').value = json.data.stock;
+        document.getElementById('id_categoria').value = json.data.id_categoria;
+        document.getElementById('fecha_vencimiento').value = json.data.fecha_vencimiento;
+        document.getElementById('id_proveedor').value = json.data.id_proveedor;
 
     } catch (error) {
         console.log('Error al cargar producto: ' + error);
@@ -154,66 +165,55 @@ async function edit_product() {
 }
 
 // Evento para formulario de edición
-if (document.querySelector('#frm_edit_product')) {
-    let frm_product = document.querySelector('#frm_edit_product');
-    frm_product.onsubmit = function (e) {
+if (document.querySelector('#frm_edit_products')) {
+    let frm_products = document.querySelector('#frm_edit_products');
+    frm_products.onsubmit = function (e) {
         e.preventDefault();
-        validar_form_producto("actualizar");
+        validar_form("actualizar");
     }
 }
 
 // Validar y actualizar producto
-async function validar_form_producto(accion) {
-    // Aquí puedes agregar validaciones
-    if (accion === "actualizar") {
-        await actualizarProducto();
-    }
-}
-
-// Actualizar producto
 async function actualizarProducto() {
-    const datos = new FormData(document.getElementById('frm_edit_product'));
+    const datos = new FormData(frm_edit_product);
     let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=actualizar', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
         body: datos
     });
-    
-    let json = await respuesta.json();
+    json = await respuesta.json();
     if (!json.status) {
         alert("Error al actualizar producto: " + json.msg);
         return;
     } else {
         alert(json.msg);
-        window.location.href = base_url + 'products';
     }
 }
 
-// Para crear nuevo producto
-if (document.querySelector('#frm_new_product')) {
-    let frm_new_product = document.querySelector('#frm_new_product');
-    frm_new_product.onsubmit = function (e) {
-        e.preventDefault();
-        crearProducto();
+// para eliminar producto
+async function fn_eliminar(id) {
+    if (window.confirm("¿Confirmar eliminar?")) {
+        eliminar(id);
     }
 }
 
-async function crearProducto() {
-    const datos = new FormData(document.getElementById('frm_new_product'));
-    let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=crear', {
+async function eliminar(id) {
+    let datos = new FormData();
+    datos.append('id', id);
+    let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=eliminar', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache',
         body: datos
     });
-    
-    let json = await respuesta.json();
+    json = await respuesta.json();
     if (!json.status) {
-        alert("Error al crear producto: " + json.msg);
+        alert("");
+        console.log(json.msg);
         return;
     } else {
-        alert(json.msg);
-        window.location.href = base_url + 'products';
+        alert(json.msg)
+        location.replace(base_url + 'products');
     }
 }
