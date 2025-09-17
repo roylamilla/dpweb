@@ -42,7 +42,8 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="id_categoria" class="col-sm-4 col-form-label"><strong>id_categoria:</strong></label>
+                            <label for="id_categoria"
+                                class="col-sm-4 col-form-label"><strong>id_categoria:</strong></label>
                             <div class="col-sm-8">
                                 <select class="form-control" name="id_categoria" id="id_categoria" required>
                                     <option value="" disabled selected>seleccione</option>
@@ -56,11 +57,12 @@
                             <label for="fecha_vencimiento"
                                 class="col-sm-4 col-form-label"><strong>fecha_vencimiento:</strong></label>
                             <div class="col-sm-8">
-                                <input type="date" class="form-control" id="fecha_vencimiento"
-                                    name="fecha_vencimiento" required>
+                                <input type="date" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento"
+                                    required>
                             </div>
                         </div>
-                        
+
+                        <!--
                         <div class="mb-3 row">
                             <label for="imagen" class="col-sm-4 col-form-label"><strong>
                                     imagen:</strong></label>
@@ -68,11 +70,12 @@
                                 <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required>
                             </div>
                         </div>
-                        
-                
+-->
+
 
                         <div class="mb-3 row">
-                            <label for="id_proveedor" class="col-sm-4 col-form-label"><strong>id_proveedor:</strong></label>
+                            <label for="id_proveedor"
+                                class="col-sm-4 col-form-label"><strong>id_proveedor:</strong></label>
                             <div class="col-sm-8">
                                 <select class="form-control" name="id_proveedor" id="id_proveedor" required>
                                     <option value="" disabled selected>seleccione</option>
@@ -88,7 +91,7 @@
                             <div class="col-sm-8">
                                 <button type="submit" class="btn btn-primary">Registrar</button>
                                 <button type="reset" class="btn btn-warning">Limpiar</button>
-                                <button type="button" class="btn btn-danger">Cancelar</button>
+                                <a href="<?= BASE_URL ?>products" class="btn btn-danger">Cancelar</a>
                             </div>
                         </div>
                     </div>

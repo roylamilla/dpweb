@@ -6,10 +6,10 @@ function validar_form(tipo) {
     let stock = document.getElementById("stock").value;
     let id_categoria = document.getElementById("id_categoria").value;
     let fecha_vencimiento = document.getElementById("fecha_vencimiento").value;
-    let imagen = document.getElementById("imagen").value;
+    //let imagen = document.getElementById("imagen").value;
     let id_proveedor = document.getElementById("id_proveedor").value;
 
-    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || id_categoria == "" || fecha_vencimiento == "" || imagen == "" || id_proveedor == "") {
+    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || id_categoria == "" || fecha_vencimiento == "" || /*imagen == "" ||*/ id_proveedor == "") {
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -175,7 +175,7 @@ if (document.querySelector('#frm_edit_products')) {
 
 // Validar y actualizar producto
 async function actualizarProducto() {
-    const datos = new FormData(frm_edit_product);
+    const datos = new FormData(frm_edit_products);
     let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=actualizar', {
         method: 'POST',
         mode: 'cors',

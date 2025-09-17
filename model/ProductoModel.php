@@ -6,8 +6,8 @@ class ProductoModel{
         $this->conexion = new Conexion();
         $this->conexion = $this->conexion->connect();
     }
-    public function registrar($codigo, $nombre, $detalle, $precio, $stock, $id_categoria,$fecha_vencimiento, $imagen, $id_proveedor){
-        $consulta = "INSERT INTO producto (codigo, nombre, detalle, precio, stock, id_categoria, fecha_vencimiento, imagen, id_proveedor) VALUES ('$codigo', '$nombre', '$detalle', '$precio', '$stock', '$id_categoria', $fecha_vencimiento, '$imagen', '$id_proveedor')";
+    public function registrar($codigo, $nombre, $detalle, $precio, $stock, $id_categoria,$fecha_vencimiento, /*$imagen,*/ $id_proveedor){
+        $consulta = "INSERT INTO producto (codigo, nombre, detalle, precio, stock, id_categoria, fecha_vencimiento, /*imagen,*/ id_proveedor) VALUES ('$codigo', '$nombre', '$detalle', '$precio', '$stock', '$id_categoria', $fecha_vencimiento, '$id_proveedor')";
         $sql = $this->conexion->query($consulta);
         if ($sql) {
             $sql = $this->conexion->insert_id;
@@ -50,8 +50,8 @@ class ProductoModel{
     }    
 
     //metodo para actualizar
-    public function actualizar($id_producto, $codigo, $nombre, $detalle, $precio, $stock){
-        $consulta = "UPDATE producto SET codigo = '$codigo', nombre = '$nombre', detalle = '$detalle', precio = '$precio', stock = '$stock' WHERE id = '$id_producto'";
+    public function actualizar($id_producto, $codigo, $nombre, $detalle, $precio, $stock, $id_categoria, $fecha_vencimiento, $id_proveedor){
+        $consulta = "UPDATE producto SET codigo = '$codigo', nombre = '$nombre', detalle = '$detalle', precio = '$precio', stock = '$stock',id_categoria = '$id_categoria', fecha_vencimiento = '$fecha_vencimiento' id_proveedor = '$id_proveedor'  WHERE id = '$id_producto'";
         $sql = $this->conexion->query($consulta);
         return $sql;
     }

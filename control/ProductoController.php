@@ -14,12 +14,12 @@ if ($tipo == "registrar") {
     $stock =  $_POST['stock'];
     $id_categoria =  $_POST['id_categoria'];
     $fecha_vencimiento =  $_POST['fecha_vencimiento'];
-    $imagen =  $_POST['imagen'];
+    //$imagen =  $_POST['imagen'];
     $id_proveedor =  $_POST['id_proveedor'];
 
 
     /* validar que los campos no esten vacios*/
-    if ($codigo == "" || $nombre == "" || $detalle == "" || $precio == "" || $stock == "" || $id_categoria == "" || $imagen == "" || $id_proveedor == "") {
+    if ($codigo == "" || $nombre == "" || $detalle == "" || $precio == "" || $stock == "" || $id_categoria == "" || /*$imagen == "" || */$id_proveedor == "") {
 
         $arrResponse = array('status' => false, 'msg' => 'Error, campos vacios');
     } else {
@@ -28,7 +28,7 @@ if ($tipo == "registrar") {
         if ($existeProducto > 0) {
             $arrResponse = array('status' => false, 'msg' => 'Error: codigo ya existe');
         } else {
-            $respuesta = $objProducto->registrar($codigo, $nombre, $detalle, $precio, $stock, $id_categoria, $fecha_vencimiento, $imagen, $id_proveedor);
+            $respuesta = $objProducto->registrar($codigo, $nombre, $detalle, $precio, $stock, $id_categoria, $fecha_vencimiento, /*$imagen,*/ $id_proveedor);
             if ($respuesta) {
                 $arrResponse = array('status' => true, 'msg' => 'REGISTRADO CORRECTAMENTE');
             } else {
