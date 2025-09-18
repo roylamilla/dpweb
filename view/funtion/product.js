@@ -86,7 +86,9 @@ async function view_products() {
                 <td>${product.precio}</td>
                 <td>${product.stock}</td>
                 <td>${product.id_categoria}</td>
+                <!--
                 <td>${product.fecha_vencimiento}</td>
+                -->
                 <td>${product.id_proveedor}</td>
                 <td>
                     <a href="` + base_url + `edit-products/` + product.id + `" class="btn btn-success">Editar</a>

@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="arriba">
         <h3 class="mt-3" style="color: white;">LISTA DE PRODUCTOS</h3>
@@ -32,7 +31,9 @@
                     <th class="bg-white">Precio</th>
                     <th class="bg-white">Stock</th>
                     <th class="bg-white">id_categoria</th>
+                    <!--
                     <th class="bg-white">fecha_vencimiento</th>
+                    -->
                     <th class="bg-white">id_proveedor</th>
                     <th class="bg-white">Acciones</th>
                 </tr>

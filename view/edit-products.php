@@ -61,7 +61,7 @@
                             </select>
                         </div>
                     </div>
-
+                    
                     <div class="mb-3 row">
                         <label for="fecha_vencimiento" class="col-sm-4 col-form-label"><strong>fecha_vencimiento:</strong></label>
                         <div class="col-sm-8">
