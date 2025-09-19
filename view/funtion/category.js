@@ -12,10 +12,10 @@ function validar_form(tipo) {
         });
         return;
     }
-    if(tipo == "nuevo"){
-    registrarCategoria();
+    if (tipo == "nuevo") {
+        registrarCategoria();
     }
-    if(tipo == "actualizar"){
+    if (tipo == "actualizar") {
         actualizarcategoria();
     }
 
@@ -120,9 +120,9 @@ if (document.getElementById('content_category')) {
 
 async function edit_category() {
     try {
-        let id_category = document.getElementById('id_category').value;
+        let id_categoria = document.getElementById('id_categoria').value;
         const datos = new FormData();
-        datos.append('id_category', id_category);
+        datos.append('id_categoria', id_categoria);
 
         let respuesta = await fetch(base_url + 'control/CategoriaController.php?tipo=ver', {
             method: 'POST',
@@ -151,7 +151,7 @@ if (document.querySelector('#frm_edit_category')) {
         validar_form("actualizar");
     }
 }
-//actualizar usuario
+//actualizar categoria
 async function actualizarCategoria() {
     const datos = new FormData(frm_edit_category);
     let respuesta = await fetch(base_url + 'control/CategoriaController.php?tipo=actualizar', {

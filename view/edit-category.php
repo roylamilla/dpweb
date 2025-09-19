@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="card">
         <center>
-            <h5 class="card-header">EDITAR DATOS DE USUARIO</h5>
+            <h5 class="card-header">EDITAR DATOS DE CATEGORIA</h5>
         </center>
         <?php
         if (isset($_GET["views"])) {
@@ -11,7 +11,7 @@
         }
         ?>
         <form id="frm_edit_category" action="" method="">
-            <input type="hidden" id="id_persona" name="id_persona" value="<?= $ruta[1]; ?>">
+            <input type="hidden" id="id_categoria" name="id_categoria" value="<?= $ruta[1]; ?>">
             <div class="card-body">
                 <div class="mb-3 row">
 

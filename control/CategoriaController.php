@@ -47,7 +47,7 @@ if ($tipo == "ver") {
     $categoria = $objCategoria->ver($id_categoria);
     if ($categoria) {
         $respuesta['status'] = true;
-        $respuesta['data'] = $categorias;
+        $respuesta['data'] = $categoria;
     } else {
         $respuesta['msg'] = 'Error, categoria no existe';
     }
@@ -57,11 +57,11 @@ if ($tipo == "ver") {
 /*para actualizar*/
 if ($tipo == "actualizar") {
     //print_r($_POST);
-    $id_persona = $_POST['id_persona'];
+    $id_categoria = $_POST['id_categoria'];
     $nombre = $_POST['nombre'];
     $detalle = $_POST['detalle'];
     
-    if ($id_persona == "" || $nombre == "" || $detalle == "" ) {
+    if ($id_categoria == "" || $nombre == "" || $detalle == "" ) {
 
         $arrResponse = array('status' => false, 'msg' => 'Error, campos vacios');
     } else {
