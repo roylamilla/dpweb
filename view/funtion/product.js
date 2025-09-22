@@ -219,3 +219,15 @@ async function eliminar(id) {
         location.replace(base_url + 'products');
     }
 }
+
+async function cargarCategorias() {
+    let respuesta = await fetch(base_url + 'control/CategoriaController.php?tipo=ver_categorias', {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache'
+    });
+    let json = await respuesta.json();
+    json.data.forEach(element => {
+        
+    });
+}

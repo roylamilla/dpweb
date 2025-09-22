@@ -43,13 +43,10 @@
                         </div>
                         <div class="mb-3 row">
                             <label for="id_categoria"
-                                class="col-sm-4 col-form-label"><strong>id_categoria:</strong></label>
+                                class="col-sm-4 col-form-label"><strong>Categoria:</strong></label>
                             <div class="col-sm-8">
                                 <select class="form-control" name="id_categoria" id="id_categoria" required>
-                                    <option value="" disabled selected>seleccione</option>
-                                    <option value="1">id = 1</option>
-                                    <option value="2">id = 2</option>
-                                    <option value="3">id = 3</option>
+                                    <option value="" disabled selected>seleccione categoria</option>
                                 </select>
                             </div>
                         </div>
@@ -103,3 +100,7 @@
 </div>
 
 <script src="<?php echo BASE_URL; ?>view/funtion/product.js"></script>
+
+<script>
+    cargarCategorias();
+</script>
