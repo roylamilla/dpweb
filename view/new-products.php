@@ -4,7 +4,7 @@
             <center>
                 <h5 class="card-header">INGRESA LOS DATOS</h5>
             </center>
-            <form id="frm_products" action="" method="">
+            <form id="frm_products" action="" method="" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="mb-3 row">
 
@@ -57,20 +57,20 @@
                             <label for="fecha_vencimiento"
                                 class="col-sm-4 col-form-label"><strong>fecha_vencimiento:</strong></label>
                             <div class="col-sm-8">
-                                <input type="date" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento"
-                                    required>
+                                <input type="date" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento" required>
                             </div>
                         </div>
 
-                        <!--
+
+
                         <div class="mb-3 row">
                             <label for="imagen" class="col-sm-4 col-form-label"><strong>
                                     imagen:</strong></label>
                             <div class="col-sm-8">
-                                <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required>
+                                <input type="file" class="form-control" id="imagen" name="imagen" accept=".jpg, .jpeg, .png" required>
                             </div>
                         </div>
--->
+
 
 
                         <div class="mb-3 row">

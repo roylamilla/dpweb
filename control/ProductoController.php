@@ -22,7 +22,7 @@ if ($tipo == "registrar") {
     if ($codigo == "" || $nombre == "" || $detalle == "" || $precio == "" || $stock == "" || $id_categoria == "" || /*$imagen == "" || */$id_proveedor == "") {
 
         $arrResponse = array('status' => false, 'msg' => 'Error, campos vacios');
-    } else {
+    }else {
         // validar si existe producto con el mismo 
         $existeProducto = $objProducto->existeProducto($codigo);
         if ($existeProducto > 0) {

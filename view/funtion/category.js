@@ -16,7 +16,7 @@ function validar_form(tipo) {
         registrarCategoria();
     }
     if (tipo == "actualizar") {
-        actualizarcategoria();
+        actualizarCategoria();
     }
 
 
