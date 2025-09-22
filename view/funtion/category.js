@@ -73,19 +73,20 @@ async function view_category() {
         json.forEach((category, index) => {
             let fila = document.createElement('tr');
             fila.innerHTML = `
-                <td>${index + 1}</td>
-                <td>${category.nombre}</td>
-                <td>${category.detalle}</td>
-                <td>
-                    <a href="`+ base_url + `edit-category/` + category.id + `" class="btn btn-success">Editar</a>
-                    <br>
-                    <button data-id="${category.id}" class="btn btn-eliminar btn-danger">Eliminar</button>
-                </td>
-                
-            `;
+                    <td>${index + 1}</td>
+                    <td>${category.nombre}</td>
+                    <td>${category.detalle}</td>
+                    <td>
+                        <a href="`+ base_url + `edit-category/` + category.id + `" class="btn btn-success">Editar</a>
+                        <br>
+                        <button data-id="${category.id}" class="btn btn-eliminar btn-danger">Eliminar</button>
+                    </td>
+                    
+                `;
 
             content_categorys.appendChild(fila);
         });
+
 
         // Agrega el evento click a los botones de eliminar
         document.querySelectorAll('.btn-eliminar').forEach(btn => {
@@ -107,8 +108,7 @@ async function view_category() {
                 }
             });
         });
-
-    } catch (error) {
+    }catch (error) {
         console.log('Error al obtener categoria, No hay nada: ' + error);
     }
 }

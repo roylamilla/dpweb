@@ -1,7 +1,9 @@
 <?php
 require_once("../model/ProductoModel.php");
+require_once("../model/CategoriaModel.php");
 
 $objProducto = new ProductoModel();
+$objCategoria = new CategoriaModel();
 
 $tipo = $_GET['tipo'];
 
@@ -17,9 +19,9 @@ if ($tipo == "registrar") {
     //$imagen =  $_POST['imagen'];
     $id_proveedor =  $_POST['id_proveedor'];
 
-
-    /* validar que los campos no esten vacios*/
-    if ($codigo == "" || $nombre == "" || $detalle == "" || $precio == "" || $stock == "" || $id_categoria == "" || /*$imagen == "" || */$id_proveedor == "") {
+    /*
+    // validar que los campos no esten vacios
+    if ($codigo == "" || $nombre == "" || $detalle == "" || $precio == "" || $stock == "" || $id_categoria == "" || $fecha_vencimiento == "" || $imagen == "" || $id_proveedor == "") {
 
         $arrResponse = array('status' => false, 'msg' => 'Error, campos vacios');
     }else {
@@ -28,7 +30,7 @@ if ($tipo == "registrar") {
         if ($existeProducto > 0) {
             $arrResponse = array('status' => false, 'msg' => 'Error: codigo ya existe');
         } else {
-            $respuesta = $objProducto->registrar($codigo, $nombre, $detalle, $precio, $stock, $id_categoria, $fecha_vencimiento, /*$imagen,*/ $id_proveedor);
+            $respuesta = $objProducto->registrar($codigo, $nombre, $detalle, $precio, $stock, $id_categoria, $fecha_vencimiento, $imagen, $id_proveedor);
             if ($respuesta) {
                 $arrResponse = array('status' => true, 'msg' => 'REGISTRADO CORRECTAMENTE');
             } else {
@@ -37,6 +39,51 @@ if ($tipo == "registrar") {
         }
     }
     echo json_encode($arrResponse);
+    */
+    
+    
+    if (!isset($_FILES['imagen']) || $_FILES['imagen']['error'] !== UPLOAD_ERR_OK) {
+        echo json_encode(['status' => false, 'msg' => 'Error, imagen no recibida']);
+        exit;
+    }
+    if ($objProducto->existeProducto($codigo) > 0) {
+        echo json_encode(['status' => false, 'msg' => 'Error, el código ya existe']);
+        exit;
+    }
+    $file = $_FILES['imagen'];
+    $ext  = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    $extPermitidas = ['jpg', 'jpeg', 'png'];
+
+    if (!in_array($ext, $extPermitidas)) {
+        echo json_encode(['status' => false, 'msg' => 'Formato de imagen no permitido']);
+        exit;
+    }
+    if ($file['size'] > 5 * 1024 * 1024) { // 5MB
+        echo json_encode(['status' => false, 'msg' => 'La imagen supera 2MB']);
+        exit;
+    }
+    $carpetaUploads = "../uploads/productos/";
+    if (!is_dir($carpetaUploads)) {
+        @mkdir($carpetaUploads, 0775, true);
+    }
+
+    $nombreUnico = uniqid('prod_') . '.' . $ext;
+    $rutaFisica  = $carpetaUploads . $nombreUnico;
+    $rutaRelativa = "uploads/productos/" . $nombreUnico;
+
+    if (!move_uploaded_file($file['tmp_name'], $rutaFisica)) {
+        echo json_encode(['status' => false, 'msg' => 'No se pudo guardar la imagen']);
+        exit;
+    }
+    $id = $objProducto->registrar($codigo,$nombre,$detalle,$precio,$stock,$id_categoria,$fecha_vencimiento,$rutaRelativa, $id_proveedor);
+    if ($id > 0) {
+        echo json_encode(['status' => true, 'msg' => 'Registrado correctamente', 'id' => $id, 'img' => $rutaRelativa]);
+    } else {
+        @unlink($rutaFisica); // revertir archivo si falló BD
+        echo json_encode(['status' => false, 'msg' => 'Error, falló en registro']);
+    }
+    exit;
+    
 }
 
 
