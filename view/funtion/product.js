@@ -227,7 +227,10 @@ async function cargarCategorias() {
         cache: 'no-cache'
     });
     let json = await respuesta.json();
-    json.data.forEach(element => {
-        
+    json.data.forEach(categoria => {
+        contenido += '<option value="">' + categoria.nombre + '</option>';
     });
-}
+
+    //
+    document.getElementById('id_categoria').innerHTML = contenido;
+}  
