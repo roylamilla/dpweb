@@ -231,7 +231,7 @@ async function cargar_categorias() {
     let json = await respuesta.json();
     let contenido = '<option>Seleccione Categoria</option>';
     json.data.forEach(categoria => {
-        contenido += '<option value="">'+categoria.nombre+'</option>';
+        contenido += '<option value="'+categoria.id+'">'+categoria.nombre+'</option>';
     });
     //console.log(contenido);
     document.getElementById("id_categoria").innerHTML = contenido;
@@ -247,7 +247,7 @@ async function cargar_proveedores() {
     let json = await respuesta.json();
     let contenido = '<option>Seleccione Proveedor</option>';
     json.data.forEach(persona => {
-        contenido += '<option value="">'+persona.razon_social+' -> '+persona.rol+'</option>';
+        contenido += '<option value="'+persona.id+'">'+persona.razon_social+' -> '+persona.rol+'</option>';
     });
     //console.log(contenido);
     document.getElementById("id_proveedor").innerHTML = contenido;
