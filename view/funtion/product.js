@@ -220,17 +220,35 @@ async function eliminar(id) {
     }
 }
 
-async function cargarCategorias() {
+//cargar categorias y proveedores en el formulario
+
+async function cargar_categorias() {
     let respuesta = await fetch(base_url + 'control/CategoriaController.php?tipo=ver_categorias', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache'
     });
     let json = await respuesta.json();
+    let contenido = '<option>Seleccione Categoria</option>';
     json.data.forEach(categoria => {
-        contenido += '<option value="">' + categoria.nombre + '</option>';
+        contenido += '<option value="">'+categoria.nombre+'</option>';
     });
+    //console.log(contenido);
+    document.getElementById("id_categoria").innerHTML = contenido;
+}
 
-    //
-    document.getElementById('id_categoria').innerHTML = contenido;
-}  
+
+async function cargar_proveedores() {
+    let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=ver_usuarios', {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache'
+    });
+    let json = await respuesta.json();
+    let contenido = '<option>Seleccione Proveedor</option>';
+    json.data.forEach(persona => {
+        contenido += '<option value="">'+persona.razon_social+' -> '+persona.rol+'</option>';
+    });
+    //console.log(contenido);
+    document.getElementById("id_proveedor").innerHTML = contenido;
+}

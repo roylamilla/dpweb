@@ -32,10 +32,19 @@ if ($tipo == "registrar") {
 }
 
 
-/* ver categorias registrados*/
+/* ver categorias registrados
 if ($tipo == "ver_categorias") {
     $categorias = $objCategoria->verCategorias();
     echo json_encode($categorias);
+}*/
+
+if ($tipo == "ver_categorias") {
+    $respuesta = array('status' => false, 'msg' => 'fallo el controlador');
+    $categorias = $objCategoria->verCategorias();
+    if (count($categorias)) {
+        $respuesta = array('status' => true, 'msg' => '', 'data' => $categorias);
+    }
+    echo json_encode($respuesta);
 }
 
 

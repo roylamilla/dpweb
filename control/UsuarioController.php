@@ -68,10 +68,19 @@ if ($tipo == "iniciar_sesion") {
 }
 
 
-/* ver usuarios registrados*/
+/* ver usuarios registrados
 if ($tipo == "ver_usuarios") {
     $usuarios = $objPersona->verUsuarios();
     echo json_encode($usuarios);
+}*/
+
+if ($tipo == "ver_usuarios") {
+    $respuesta = array('status' => false, 'msg' => 'fallo el controlador');
+    $usuarios = $objPersona->verUsuarios();
+    if (count($usuarios)) {
+        $respuesta = array('status' => true, 'msg' => '', 'data' => $usuarios);
+    }
+    echo json_encode($respuesta);
 }
 
 
@@ -131,7 +140,7 @@ if ($tipo == "actualizar") {
 
 
 // Metodo para Elimar datos de Usuario
-if ($tipo == "eliminar") {
+/*if ($tipo == "eliminar") {
     // El JS envía 'id', no 'id_persona'
     $id_persona = isset($_POST['id']) ? $_POST['id'] : '';
 
@@ -152,7 +161,22 @@ if ($tipo == "eliminar") {
     }
     echo json_encode($arrResponse);
     exit;
+}*/
+//2 manera de eliminar
+if ($tipo == "eliminar") {
+    //print_r($_POST);
+    $id_persona = $_POST['id_persona'];
+    $respuesta = array('status' => false, 'msg' => '');
+    $resultado = $objPersona->eliminar($id_persona);
+    if ($resultado) {
+        $respuesta = array('status' => true, 'msg' => 'Eliminado Correctamente');
+    }else {
+        $respuesta = array('status' => false, 'msg' => $resultado);
+    }
+    echo json_encode($respuesta);
 }
+
+
 
 
 
