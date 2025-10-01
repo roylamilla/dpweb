@@ -45,7 +45,7 @@
                             <label for="id_categoria"
                                 class="col-sm-4 col-form-label"><strong>Categoria:</strong></label>
                             <div class="col-sm-8">
-                                <select class="form-control" name="id_categoria" id="id_categoria" required>
+                                <select  name="id_categoria" id="id_categoria" required>
                                     <option value="" disabled selected>seleccione</option>
                                 </select>
                             </div>
@@ -74,7 +74,7 @@
                             <label for="id_proveedor"
                                 class="col-sm-4 col-form-label"><strong>Proveedor:</strong></label>
                             <div class="col-sm-8">
-                                <select class="form-control" name="id_proveedor" id="id_proveedor" required>
+                                <select  name="id_proveedor" id="id_proveedor" required>
                                     <option value="" disabled selected>seleccione</option>
                                 </select>
                             </div>

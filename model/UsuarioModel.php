@@ -63,4 +63,16 @@ class UsuarioModel{
         $sql = $this->conexion->query($consulta);
         return $sql;
     }
+
+
+    public function verProveedores(){
+        $arr_usuarios = array();
+        $consulta = "SELECT razon_social, rol from persona where rol = 'proveedor';";
+        $sql = $this->conexion->query($consulta);
+        while ($objeto = $sql->fetch_object()) {
+            array_push($arr_usuarios, $objeto);
+        }
+        return $arr_usuarios;
+    }
+
 }

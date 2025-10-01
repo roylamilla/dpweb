@@ -239,7 +239,7 @@ async function cargar_categorias() {
 
 
 async function cargar_proveedores() {
-    let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=ver_usuarios', {
+    let respuesta = await fetch(base_url + 'control/UsuarioController.php?tipo=ver_proveedores', {
         method: 'POST',
         mode: 'cors',
         cache: 'no-cache'
