@@ -4,6 +4,12 @@
         <h3 class="new-user">
             <a class="nav-link" href="<?php echo BASE_URL; ?>new-user">new user</a>
         </h3>
+        <h3 class="cliente">
+            <a class="nav-link" href="<?php echo BASE_URL; ?>cliente">Clientes</a>
+        </h3>
+        <h3 class="proveedor">
+            <a class="nav-link" href="<?php echo BASE_URL; ?>proveedor">Proveedores</a>
+        </h3>
     </div>
     <style>
         .arriba {
@@ -17,6 +23,14 @@
 
         .nav-link {
             color: white;
+        }
+
+        .cliente {
+            margin-top: 15px;
+        }
+
+        .proveedor {
+            margin-top: 15px;
         }
        
     </style>

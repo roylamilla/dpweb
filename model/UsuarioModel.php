@@ -34,7 +34,7 @@ class UsuarioModel{
     /*metodo para listar */
     public function verUsuarios(){
         $arr_usuarios = array();
-        $consulta = "SELECT* from persona";
+        $consulta = "SELECT * FROM persona WHERE rol IN ('administrador', 'vendedor', 'cajero')";
         $sql = $this->conexion->query($consulta);
         while ($objeto = $sql->fetch_object()) {
             array_push($arr_usuarios, $objeto);
@@ -66,8 +66,18 @@ class UsuarioModel{
 
 
     public function verProveedores(){
-        $arr_usuarios = array();
+        $arr_proveedor = array();
         $consulta = "SELECT razon_social, rol from persona where rol = 'proveedor';";
+        $sql = $this->conexion->query($consulta);
+        while ($objeto = $sql->fetch_object()) {
+            array_push($arr_proveedor, $objeto);
+        }
+        return $arr_proveedor;
+    }
+
+    public function verClientes(){
+        $arr_usuarios = array();
+        $consulta = "SELECT * FROM persona WHERE rol = 'cliente'";
         $sql = $this->conexion->query($consulta);
         while ($objeto = $sql->fetch_object()) {
             array_push($arr_usuarios, $objeto);
