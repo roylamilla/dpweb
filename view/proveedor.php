@@ -1,8 +1,8 @@
 <div class="container">
     <div class="arriba">
-        <h3 class="mt-3" style="color: white;">LISTA DE CLIENTES</h3>
-        <h3 class="new-cliente">
-            <a class="nav-link" href="<?php echo BASE_URL; ?>new-cliente">new cliente</a>
+        <h3 class="mt-3" style="color: white;">LISTA DE PROVEEDORES</h3>
+        <h3 class="new-proveedor">
+            <a class="nav-link" href="<?php echo BASE_URL; ?>new-proveedor">new proveedor</a>
         </h3>
         <h3 class="users">
             <a class="nav-link" href="<?php echo BASE_URL; ?>users">Usuarios</a>
@@ -15,7 +15,7 @@
             display: flex;
         }
 
-        .new-cliente {
+        .new-proveedor {
             margin-top: 15px;
         }
 
@@ -42,7 +42,7 @@
                     <th class="bg-white">Acciones</th>
                 </tr>
             </thead>
-            <tbody id="content_clientes">
+            <tbody id="content_proveedor">
 
             </tbody>
         </table>

@@ -11,8 +11,9 @@
     </script>
     <style>
         body {
-            /*background: linear-gradient(to right, #ff0000ff, #0011ffff);*/
-            background-image: url("view/img/fond.jpg");
+            background: linear-gradient(to right, #ff0000ff, #0011ffff);
+            /*background-image: url("view/img/fond.jpg");*/
+            
         }
 
         .nav-link {

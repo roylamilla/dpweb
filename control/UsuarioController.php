@@ -177,16 +177,6 @@ if ($tipo == "eliminar") {
 }
 
 
-if ($tipo == "ver_proveedores") {
-    $respuesta = array('status' => false, 'msg' => 'fallo el controlador');
-    $usuarios = $objPersona->verProveedores();
-    if (count($usuarios)) {
-        $respuesta = array('status' => true, 'msg' => '', 'data' => $usuarios);
-    }
-    echo json_encode($respuesta);
-}
-
-
 
 
 /* para cerrar sesion */
@@ -196,4 +186,30 @@ if ($tipo == 'cerrar_sesion') {
     session_destroy();
     echo json_encode(['status' => true, 'msg' => 'Sesión cerrada correctamente']);
     exit;
+}
+
+
+
+
+
+//ver clientes
+if ($tipo == "ver_clientes") {
+    $respuesta = array('status' => false, 'msg' => 'fallo el controlador');
+    $usuarios = $objPersona->verClientes();
+    if (count($usuarios)) {
+        $respuesta = array('status' => true, 'msg' => '', 'data' => $usuarios);
+    }
+    echo json_encode($respuesta);
+}
+
+
+
+//ver proveedores
+if ($tipo == "ver_proveedores") {
+    $respuesta = array('status' => false, 'msg' => 'fallo el controlador');
+    $usuarios = $objPersona->verProveedores();
+    if (count($usuarios)) {
+        $respuesta = array('status' => true, 'msg' => '', 'data' => $usuarios);
+    }
+    echo json_encode($respuesta);
 }
