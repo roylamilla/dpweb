@@ -261,8 +261,8 @@
                 <input type="password" name="password" id="password" class="input" placeholder="contraseña">
                 <i class="fa-solid fa-lock"></i>
             </div>
-            <button class="submit" onclick="iniciar_sesion();">Iniciar sesión</button>
-            <!--<button type="button" onclick="iniciar_sesion();">Ingresar</button>-->
+            <!--<button class="submit" onclick="iniciar_sesion();">Iniciar sesión</button>-->
+            <button class="submit" type="button" onclick="iniciar_sesion();">Ingresar</button>
             <p class="footer">¿No tienes cuenta? <a href="#" class="link">Por favor, Registrate</a></p>
         </form>
         <div></div>
