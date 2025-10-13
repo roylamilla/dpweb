@@ -202,6 +202,48 @@ if ($tipo == "ver_clientes") {
     echo json_encode($respuesta);
 }
 
+//registrar cliente...
+
+/*para actualizar*/
+if ($tipo == "actualizar_cliente") {
+    //print_r($_POST);
+    $id_persona = $_POST['id_persona'];
+    $nro_identidad =  $_POST['nro_identidad'];
+    $razon_social =  $_POST['razon_social'];
+    $telefono =  $_POST['telefono'];
+    $correo =  $_POST['correo'];
+    $departamento =  $_POST['departamento'];
+    $provincia =  $_POST['provincia'];
+    $distrito =  $_POST['distrito'];
+    $cod_postal =  $_POST['cod_postal'];
+    $direccion =  $_POST['direccion'];
+    $rol =  $_POST['rol'];
+    if ($id_persona == "" || $nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" || $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" || $direccion == "" || $rol == "") {
+
+        $arrResponse = array('status' => false, 'msg' => 'Error, campos vacios');
+    } else {
+        $existeID = $objPersona->ver($id_persona);
+        if (!$existeID) {
+            //devolver respuesta
+            $arrResponse = array('status' => false, 'msg' => 'Error, usuario no existe en BD');
+            echo json_encode($arrResponse);
+            //cerrar funcion
+            exit;
+        } else {
+            //actualizar
+            $actualizar = $objPersona->actualizar($id_persona, $nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $cod_postal, $direccion, $rol);
+            if ($actualizar) {
+                $arrResponse = array('status' => true, 'msg' => "Actualizado correctamente");
+            } else {
+                $arrResponse = array('status' => false, 'msg' => $actualizar);
+            }
+            echo json_encode($arrResponse);
+            exit;
+        }
+    }
+}
+
+
 
 
 //ver proveedores
@@ -213,3 +255,43 @@ if ($tipo == "ver_proveedores") {
     }
     echo json_encode($respuesta);
 }
+
+//actualizar proveedor
+if ($tipo == "actualizar_proveedor") {
+    //print_r($_POST);
+    $id_persona = $_POST['id_persona'];
+    $nro_identidad =  $_POST['nro_identidad'];
+    $razon_social =  $_POST['razon_social'];
+    $telefono =  $_POST['telefono'];
+    $correo =  $_POST['correo'];
+    $departamento =  $_POST['departamento'];
+    $provincia =  $_POST['provincia'];
+    $distrito =  $_POST['distrito'];
+    $cod_postal =  $_POST['cod_postal'];
+    $direccion =  $_POST['direccion'];
+    $rol =  $_POST['rol'];
+    if ($id_persona == "" || $nro_identidad == "" || $razon_social == "" || $telefono == "" || $correo == "" || $departamento == "" || $provincia == "" || $distrito == "" || $cod_postal == "" || $direccion == "" || $rol == "") {
+
+        $arrResponse = array('status' => false, 'msg' => 'Error, campos vacios');
+    } else {
+        $existeID = $objPersona->ver($id_persona);
+        if (!$existeID) {
+            //devolver respuesta
+            $arrResponse = array('status' => false, 'msg' => 'Error, usuario no existe en BD');
+            echo json_encode($arrResponse);
+            //cerrar funcion
+            exit;
+        } else {
+            //actualizar
+            $actualizar = $objPersona->actualizar($id_persona, $nro_identidad, $razon_social, $telefono, $correo, $departamento, $provincia, $distrito, $cod_postal, $direccion, $rol);
+            if ($actualizar) {
+                $arrResponse = array('status' => true, 'msg' => "Actualizado correctamente");
+            } else {
+                $arrResponse = array('status' => false, 'msg' => $actualizar);
+            }
+            echo json_encode($arrResponse);
+            exit;
+        }
+    }
+}
+

@@ -14,6 +14,7 @@
             <center>
                 <h1 class="card-header">BIENVENIDO</h1>
             </center>
+
             <style>
                 h1 {
                     background-color: lightseagreen;
@@ -21,29 +22,19 @@
                 }
 
                 body {
-                    background-image: url('view/img/bambu.jpg');
-                    height: 100%;
-                    width: 100%;
+                    background: linear-gradient(45deg, #0ef, #c800ff);
                     background-size: 100%;
-                }
-
-                /*
-                body {
-                    margin: 0;
-                    padding: 0;
-                    background-image: url('view/img/bambu.jpg');
-                    background-size: cover;
-                    background-position: center;
+                    background-attachment: fixed;
                     background-repeat: no-repeat;
-                    height: 100vh;
-                    width: 100vw;
-                }*/
+                }
 
                 img {
                     width: 300px;
                     height: 300px;
                 }
             </style>
+
+
 
             <div class="home">
                 <section class="principal" style="height: 200px;">
@@ -118,9 +109,9 @@
                         margin: 40%;
                     }
                 </style>
-
             </div>
         </div>
     </div>
 </body>
+
 </html>

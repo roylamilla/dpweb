@@ -49,6 +49,6 @@
     </div>
 
 </div>
-<script src="<?php echo BASE_URL; ?>view/funtion/user.js"></script>
+<script src="<?php echo BASE_URL; ?>view/funtion/proveedor.js"></script>
 <!--
 <script>view_users();</script>-->

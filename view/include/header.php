@@ -11,9 +11,13 @@
     </script>
     <style>
         body {
-            background: linear-gradient(to right, #ff0000ff, #0011ffff);
+            background: linear-gradient(45deg, #0ef, #c800ff);
+            background-size: 100%;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            /*background: linear-gradient(to right, #ff0000ff, #0011ffff);*/
             /*background-image: url("view/img/fond.jpg");*/
-            
+
         }
 
         .nav-link {
@@ -41,37 +45,46 @@
             border: solid black;
         }
 
-        #navbarSupportedContent{
-            background: linear-gradient(to right, #4615f7ff, #fc47deff);
+        #navbarSupportedContent {
+            background: linear-gradient(45deg, #c800ff, #0ef);
+            /*background: linear-gradient(to right, #4615f7ff, #fc47deff);*/
         }
-        #menu{
+
+        #menu {
             border: 2px black solid;
-            background: linear-gradient(to right, #4615f7ff, #fc47deff);
+            background: linear-gradient(45deg, #c800ff, #0ef);
+            /*background: linear-gradient(to right, #4615f7ff, #fc47deff);*/
         }
-        .card-body{
-            background: linear-gradient(to right, #2fd129, #0996f5ff);
+
+        .card-body {
+            /*background: linear-gradient(to right, #2fd129, #0996f5ff);*/
+            background: linear-gradient(45deg, #c800ff, #0ef);
+            background-size: 100%;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
-        
-        strong{
+
+        strong {
             color: white;
         }
 
-        .btn{
+        .btn {
             border: 2px white solid;
         }
-        
-        .nav-link{
+
+        .nav-link {
             font-family: fantasy;
             color: white;
         }
-        
     </style>
 </head>
 
-<body>  
+<body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" id="menu">
-            <a class="navbar-brand" href=""><h1 style="color: white;">LR</h1></a>
+            <a class="navbar-brand" href="">
+                <h1 style="color: white;">LR</h1>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -93,14 +106,16 @@
                         <a class="nav-link" href="<?php echo BASE_URL; ?>category">category</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Clients</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>cliente">Clientes</a>
                     </li>
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL; ?>compras">Shops</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL; ?>venta">Sales</a>
                     </li>
+                    -->
 
                 </ul>
                 <form class="d-flex" role="search">

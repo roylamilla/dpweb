@@ -2,22 +2,27 @@
 <div class="container-fluid">
     <div class="card">
         <center>
-            <h5 class="card-header">NUEVO CLIENTE</h5>
+            <h5 class="card-header">EDITAR DATOS DE PROVEEDOR</h5>
         </center>
-        <form id="frm_cliente" action="" method="">
+        <?php
+        if (isset($_GET["views"])) {
+            $ruta = explode("/", $_GET["views"]);
+            //echo $ruta[1];
+        }
+        ?>
+        <form id="frm_edit_proveedor" action="" method="">
+            <input type="hidden" id="id_persona" name="id_persona" value="<?= $ruta[1]; ?>">
             <div class="card-body">
                 <div class="mb-3 row">
 
                     <div class="mb-3 row">
-                        <label for="nro_identidad" class="col-sm-4 col-form-label"><strong>nro
-                                documento:</strong></label>
+                        <label for="nro_identidad" class="col-sm-4 col-form-label"><strong>nro documento:</strong></label>
                         <div class="col-sm-8">
                             <input type="number" class="form-control" id="nro_identidad" name="nro_identidad" required>
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="razon_social" class="col-sm-4 col-form-label"><strong>razon social
-                                (Nombre):</strong></label>
+                        <label for="razon_social" class="col-sm-4 col-form-label"><strong>razon social (Nombre):</strong></label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="razon_social" name="razon_social" required>
                         </div>
@@ -65,22 +70,23 @@
                             <input type="text" class="form-control" id="direccion" name="direccion" required>
                         </div>
                     </div>
+
                     <div class="mb-3 row">
                         <label for="rol" class="col-sm-4 col-form-label"><strong>rol:</strong></label>
-                        <select class="col-sm-8" name="rol" id="rol" required readonly>
-                            <option value="Cliente" selected>Cliente</option>
-                        </select>
-                        <!--<div class="col-sm-8">
-                            <input type="text" value="cliente" class="form-control" id="rol" name="rol" required disabled>
-                        </div>-->
+                        <div class="col-sm-8">
+                            <select class="form-control" name="rol" id="rol" required readonly>
+                                <option value="Proveedor">Proveedor</option>
+                            </select>
+                            <!--
+                            <input type="text" value="cliente" class="form-control" id="rol" name="rol" required disabled>-->
+                        </div>
                     </div>
+
                     <div class="mb-3 row">
                         <label class="col-sm-4 col-form-label"></label>
                         <div class="col-sm-8">
-                            <button type="submit" class="btn btn-primary">Registrar</button>
-                            <button type="reset" class="btn btn-warning">Limpiar</button>
-                            <!--<button type="button" class="btn btn-danger">Cancelar</button>-->
-                            <a href="<?= BASE_URL ?>cliente" class="btn btn-danger">Cancelar</a>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                            <a href="<?= BASE_URL ?>proveedor" class="btn btn-warning">Cancelar</a>
                         </div>
                     </div>
                 </div>
@@ -89,4 +95,7 @@
     </div>
 </div>
 <!-- FIN DE CUERPO DE PAGINA-->
-<script src="<?php echo BASE_URL; ?>view/funtion/user.js"></script>
+<script src="<?php echo BASE_URL; ?>view/funtion/proveedor.js"></script>
+<script>
+    edit_proveedor();
+</script>
