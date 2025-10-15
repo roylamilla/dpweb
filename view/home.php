@@ -8,6 +8,7 @@
 
 </head>
 
+
 <body>
     <div class="container-fluid">
         <div class="card">
@@ -29,6 +30,7 @@
                 }
 
                 img {
+                    border-radius: 20px;
                     width: 300px;
                     height: 300px;
                 }
@@ -39,7 +41,7 @@
             <div class="home">
                 <section class="principal" style="height: 200px;">
                     <div class="cuadro">
-                        <strong>user</strong>
+                        <strong>users</strong>
                         <a href="users">
                             <img src="view/home/user.png" alt="">
                         </a>
@@ -90,24 +92,32 @@
                 </section>
                 <style>
                     .principal {
+                        /*
                         flex-wrap: wrap;
                         display: flex;
                         background-color: transparent;
-                    }
+                        */
+                        
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: repeat(3, 1fr);
+                        gap: 10px;
+                        }
 
-                    .cuadro {
-                        background-color: lightseagreen;
-                        /*border: 5px black solid;*/
-                        width: 300px;
-                        height: 300px;
-                        margin-top: 50px;
-                        margin-right: 3%;
-                    }
+                        .cuadro {
+                            background-color: lightseagreen;
+                            /*border: 5px black solid;*/
+                            width: 300px;
+                            height: 300px;
+                            border-radius: 20px;
+                            margin-top: 20px;
+                            margin-right: 3%;
+                        }
 
-                    strong {
-                        color: black;
-                        margin: 40%;
-                    }
+                        strong {
+                            color: black;
+                            margin: 40%;
+                        }
                 </style>
             </div>
         </div>
