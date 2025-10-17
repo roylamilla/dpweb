@@ -40,176 +40,7 @@
                 }
             </style>
         </div>
-
-        <style>
-            /* Estilos generales */
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            }
-
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            /* Grid de categorías */
-            .categorias-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 20px;
-            }
-
-            .categoria {
-                background-color: white;
-                border-radius: 10px;
-                padding: 25px 20px;
-                text-align: center;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-                cursor: pointer;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                min-height: 220px;
-            }
-
-            .categoria:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-            }
-
-            .categoria h2 {
-                font-size: 1.3rem;
-                color: #2c3e50;
-                font-weight: 600;
-                margin: 0;
-            }
-
-            /* Colores para diferentes categorías */
-            .categoria:nth-child(1) {
-                border-top: 5px solid #1100ffff;
-            }
-
-            .categoria:nth-child(2) {
-                border-top: 5px solid #ff1900ff;
-            }
-
-            .categoria:nth-child(3) {
-                border-top: 5px solid #00ff55ff;
-            }
-
-            .categoria:nth-child(4) {
-                border-top: 5px solid #ff9d00ff;
-            }
-
-            .categoria:nth-child(5) {
-                border-top: 5px solid #ff00eaff;
-            }
-
-            .categoria:nth-child(6) {
-                border-top: 5px solid #00d9ffff;
-            }
-
-            .categoria:nth-child(7) {
-                border-top: 5px solid #ff6600ff;
-            }
-
-            .categoria:nth-child(8) {
-                border-top: 5px solid #ffe600ff;
-            }
-
-            .categoria:nth-child(9) {
-                border-top: 5px solid #0400ffff;
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-                .categorias-grid {
-                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                    gap: 15px;
-                }
-
-                h1 {
-                    font-size: 2rem;
-                }
-
-                .categoria {
-                    padding: 20px 15px;
-                    min-height: 100px;
-                }
-
-                .categoria h2 {
-                    font-size: 1.1rem;
-                }
-            }
-
-            @media (max-width: 500px) {
-                .categorias-grid {
-                    grid-template-columns: 1fr;
-                    gap: 12px;
-                }
-
-                h1 {
-                    font-size: 1.8rem;
-                }
-
-                .categoria {
-                    padding: 18px 15px;
-                    min-height: 90px;
-                }
-            }
-        </style>
-
-
-        <body>
-            <div class="container">
-                <div class="categorias-grid">
-                    <div class="categoria">
-                        <a href="users">
-                            <h2>USUARIOS</h2>
-                        </a>
-                    </div>
-                    <div class="categoria">
-                        <a href="products">
-                            <h2>CLIENTES</h2>
-                        </a>
-                    </div>
-                    <div class="categoria">
-                        <a href="category">
-                            <h2>PROVEEDORES</h2>
-                        </a>
-                    </div>
-                    <div class="categoria">
-                        <a href="cliente">
-                            <h2>PRODUCTO</h2>
-                        </a>
-                    </div>
-                    <div class="categoria">
-                        <a href="proveedor">
-                            <h2>CATEGORIAS</h2>
-                        </a>
-                    </div>
-                    <div class="categoria">
-                        <a href="venta">
-                            <h2>VENTAS</h2>
-                        </a>
-                    </div>
-                    <div class="categoria">
-                        <a href="pagos">
-                            <h2>PAGOS</h2>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </body>
-
-</html>
-
-</div>
+    </div>
 </body>
 </html>-->
 
@@ -507,7 +338,7 @@
 
         <main>
             <div class="admin-panel">
-                <div class="admin-card users"> 
+                <div class="admin-card users">
                     <div class="admin-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -524,7 +355,9 @@
                         <i class="fas fa-boxes"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Productos</h3>
+                        <a href="products">
+                            <h3>Productos</h3>
+                        </a>
                         <p>Administra inventario y productos</p>
                     </div>
                 </div>
@@ -534,7 +367,9 @@
                         <i class="fas fa-user-tie"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Clientes</h3>
+                        <a href="cliente">
+                            <h3>Clientes</h3>
+                        </a>
                         <p>Gestiona información de clientes</p>
                     </div>
                 </div>
@@ -544,7 +379,9 @@
                         <i class="fas fa-truck-loading"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Proveedores</h3>
+                        <a href="proveedor">
+                            <h3>Proveedores</h3>
+                        </a>
                         <p>Administra proveedores y compras</p>
                     </div>
                 </div>
@@ -554,7 +391,9 @@
                         <i class="fas fa-tags"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Categorías</h3>
+                        <a href="category">
+                            <h3>Categorías</h3>
+                        </a>
                         <p>Organiza productos por categorías</p>
                     </div>
                 </div>
@@ -564,7 +403,9 @@
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Ventas</h3>
+                        <a href="Category">
+                            <h3>Ventas</h3>
+                        </a>
                         <p>Gestiona pedidos y ventas</p>
                     </div>
                 </div>
@@ -574,7 +415,9 @@
                         <i class="fas fa-credit-card"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Pagos</h3>
+                        <a href="Category">
+                            <h3>Pagos</h3>
+                        </a>
                         <p>Administra transacciones y pagos</p>
                     </div>
                 </div>

@@ -11,13 +11,11 @@
     </script>
     <style>
         body {
-            background: linear-gradient(45deg, #0ef, #c800ff);
+            background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);
+            /*background: linear-gradient(45deg, #0ef, #c800ff);*/
             background-size: 100%;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            /*background: linear-gradient(to right, #ff0000ff, #0011ffff);*/
-            /*background-image: url("view/img/fond.jpg");*/
-
         }
 
         .nav-link {
@@ -46,19 +44,16 @@
         }
 
         #navbarSupportedContent {
-            background: linear-gradient(45deg, #c800ff, #0ef);
-            /*background: linear-gradient(to right, #4615f7ff, #fc47deff);*/
+            background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);
         }
 
         #menu {
-            border: 2px black solid;
-            background: linear-gradient(45deg, #c800ff, #0ef);
-            /*background: linear-gradient(to right, #4615f7ff, #fc47deff);*/
+
+            background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);
         }
 
         .card-body {
-            /*background: linear-gradient(to right, #2fd129, #0996f5ff);*/
-            background: linear-gradient(45deg, #c800ff, #0ef);
+            background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);
             background-size: 100%;
             background-attachment: fixed;
             background-repeat: no-repeat;
@@ -85,7 +80,9 @@
             <a class="navbar-brand" href="">
                 <h1 style="color: white;">LR</h1>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -120,15 +117,14 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
                         <li class="nav-item dropdow">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 profile
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Perfil</a></li>
                                 <li><button type="button" onclick="cerrar_sesion();">cerrar_sesion</button></li>
-
                             </ul>
                         </li>
                     </ul>
