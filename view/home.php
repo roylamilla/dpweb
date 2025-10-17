@@ -61,7 +61,10 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);
+            background-color: #2784e7ff;
+            /*background: linear-gradient(135deg, #64778bff, #457cb4ff);*/
+            /*background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);*/
+            /*background: linear-gradient(45deg, #0ef, #c800ff);*/
             color: #fff;
             line-height: 1.6;
             min-height: 100vh;
@@ -308,6 +311,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
+
 </head>
 
 <body>
@@ -428,6 +432,7 @@
             <p>&copy; 2025 Sistema de Gestión Comercial. Todos los derechos reservados.</p>
         </footer>
     </div>
+
 </body>
 
 </html>
