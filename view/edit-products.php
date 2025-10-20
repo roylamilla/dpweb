@@ -61,6 +61,7 @@
                             </select>
                         </div>
                     </div>
+
                     
                     <div class="mb-3 row">
                         <label for="fecha_vencimiento" class="col-sm-4 col-form-label"><strong>fecha_vencimiento:</strong></label>
@@ -68,6 +69,16 @@
                             <input type="date" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento" required>
                         </div>
                     </div>
+
+                    
+                    <div class="mb-3 row">
+                        <label for="imagen" class="col-sm-4 col-form-label"><strong>
+                                imagen:</strong></label>
+                        <div class="col-sm-8">
+                            <input type="file" class="form-control" id="imagen" name="imagen" accept=".jpg, .jpeg, .png">
+                        </div>
+                    </div>
+                    
 
                     <div class="mb-3 row">
                         <label for="id_proveedor" class="col-sm-4 col-form-label"><strong>id_proveedor:</strong></label>
@@ -88,6 +99,7 @@
                             <a href="<?= BASE_URL ?>products" class="btn btn-warning">Cancelar</a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </form>
@@ -95,6 +107,7 @@
 </div>
 <!-- FIN DE CUERPO DE PAGINA-->
 <script src="<?php echo BASE_URL; ?>view/funtion/product.js"></script>
+
 <script>
     // Llamar a la función para cargar los datos del producto cuando la página esté lista
     document.addEventListener('DOMContentLoaded', function() {

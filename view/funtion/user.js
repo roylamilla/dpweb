@@ -338,7 +338,7 @@ async function cerrar_sesion() {
 
 
 
-
+/*
 // ver clientes
 async function view_clientes() {
     try {
@@ -446,7 +446,7 @@ async function registrarCliente() {
 }
 
 // actualizar cliente
-/*para editar usuario */
+//para editar usuario 
 async function edit_cliente() {
     try {
         let id_persona = document.getElementById('id_persona').value;
@@ -558,4 +558,4 @@ if (document.getElementById('content_proveedor')) {
 }
 
 
-
+*/

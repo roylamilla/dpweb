@@ -11,10 +11,10 @@
     </script>
     <style>
         body {
-            background-color: #2784e7ff;
+            /*background-color: #2784e7ff;*/
             /*background: linear-gradient(135deg, #6a8cb1ff, #457cb4ff);*/
             /*background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);*/
-            /*background: linear-gradient(45deg, #0ef, #c800ff);*/
+            background: linear-gradient(45deg, #0ef, #c800ffff);
             background-size: 100%;
             background-attachment: fixed;
             background-repeat: no-repeat;
@@ -46,17 +46,19 @@
         }
 
         #navbarSupportedContent {
-            background-color: #2784e7ff;
+            background: linear-gradient(45deg, #0ef, #c800ffff);
+            /*background-color: #2784e7ff;*/
             /*background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);*/
         }
 
         #menu {
-            background-color: #2784e7ff;
+            background: linear-gradient(45deg, rgba(49, 217, 230, 1), #c800ffff);
+            /*background-color: #2784e7ff;*/
             /*background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);*/
         }
 
         .card-body {
-            background-color: #2784e7ff;
+            background-color: #378be6ff;
             /*background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);*/
             background-size: 100%;
             background-attachment: fixed;

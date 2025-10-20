@@ -6,10 +6,10 @@ function validar_form(tipo) {
     let stock = document.getElementById("stock").value;
     let id_categoria = document.getElementById("id_categoria").value;
     let fecha_vencimiento = document.getElementById("fecha_vencimiento").value;
-    let imagen = document.getElementById("imagen").value;
+    //let imagen = document.getElementById("imagen").value;
     let id_proveedor = document.getElementById("id_proveedor").value;
 
-    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || id_categoria == "" || fecha_vencimiento == "" || /*imagen == "" ||*/ id_proveedor == "") {
+    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || id_categoria == "" || fecha_vencimiento == "" /*|| imagen == ""*/ || id_proveedor == "") {
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -159,6 +159,7 @@ async function edit_product() {
         document.getElementById('stock').value = json.data.stock;
         document.getElementById('id_categoria').value = json.data.id_categoria;
         document.getElementById('fecha_vencimiento').value = json.data.fecha_vencimiento;
+        document.getElementById('imagen').value = json.data.imagen;
         document.getElementById('id_proveedor').value = json.data.id_proveedor;
 
     } catch (error) {

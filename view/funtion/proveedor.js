@@ -164,6 +164,7 @@ async function actualizarProveedor() {
         alert(json.msg);
     }
 }
+
 async function fn_eliminar(id) {
     if (window.confirm("Confirmar eliminar?")) {
         eliminar(id);

@@ -61,10 +61,10 @@
         }
 
         body {
-            background-color: #2784e7ff;
+            /*background-color: #2784e7ff;*/
             /*background: linear-gradient(135deg, #64778bff, #457cb4ff);*/
             /*background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);*/
-            /*background: linear-gradient(45deg, #0ef, #c800ff);*/
+            background: linear-gradient(45deg, #0ef, #c800ffff);
             color: #fff;
             line-height: 1.6;
             min-height: 100vh;
