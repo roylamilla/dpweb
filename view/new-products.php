@@ -64,7 +64,7 @@
                             <label for="imagen" class="col-sm-4 col-form-label"><strong>
                                     imagen:</strong></label>
                             <div class="col-sm-8">
-                                <input type="file" class="form-control" id="imagen" name="imagen" accept=".jpg, .jpeg, .png" required>
+                                <input type="file" class="form-control" id="imagen" name="imagen" accept=".jpg, .jpeg, .png" >
                             </div>
                         </div>
 
