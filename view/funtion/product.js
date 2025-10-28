@@ -9,13 +9,11 @@ function validar_form(tipo) {
     //let imagen = document.getElementById("imagen").value;
     let id_proveedor = document.getElementById("id_proveedor").value;
 
-    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || id_categoria == "" || fecha_vencimiento == "" /*|| imagen == ""*/ || id_proveedor == "") {
+    if (codigo == "" || nombre == "" || detalle == "" || precio == "" || stock == "" || id_categoria == "" || fecha_vencimiento == "" || id_proveedor == "") {
         Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            background: "#fff url(view/img/cat.gif) center top 20% no-repeat",
-            text: "Error: Campos Vacios!",
-            footer: '<a> Es necesario rellenar todos los campos </a>'
+            title: "Error campos vacios!",
+            icon: "Error",
+            draggable: true
         });
         return;
     }
@@ -176,6 +174,7 @@ if (document.querySelector('#frm_edit_products')) {
     }
 }
 
+
 // Validar y actualizar producto
 async function actualizarProducto() {
     const datos = new FormData(frm_edit_products);
@@ -193,6 +192,8 @@ async function actualizarProducto() {
         alert(json.msg);
     }
 }
+
+
 
 // para eliminar producto
 async function fn_eliminar(id) {
@@ -232,7 +233,7 @@ async function cargar_categorias() {
     let json = await respuesta.json();
     let contenido = '<option>Seleccione Categoria</option>';
     json.data.forEach(categoria => {
-        contenido += '<option value="'+categoria.id+'">'+categoria.nombre+'</option>';
+        contenido += '<option value="' + categoria.id + '">' + categoria.nombre + '</option>';
     });
     //console.log(contenido);
     document.getElementById("id_categoria").innerHTML = contenido;
@@ -248,7 +249,7 @@ async function cargar_proveedores() {
     let json = await respuesta.json();
     let contenido = '<option>Seleccione Proveedor</option>';
     json.data.forEach(persona => {
-        contenido += '<option value="'+persona.id+'">'+persona.razon_social+' -> '+persona.rol+'</option>';
+        contenido += '<option value="' + persona.id + '">' + persona.razon_social + ' -> ' + persona.rol + '</option>';
     });
     //console.log(contenido);
     document.getElementById("id_proveedor").innerHTML = contenido;
