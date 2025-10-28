@@ -116,7 +116,7 @@ if ($tipo == "actualizar") {
 
             } else {
                 //echo "se envio imagen";
-                /*$file = $_FILES['imagen'];
+                $file = $_FILES['imagen'];
                 $ext  = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
                 $extPermitidas = ['jpg', 'jpeg', 'png'];
                 if (!in_array($ext, $extPermitidas)) {
@@ -142,7 +142,7 @@ if ($tipo == "actualizar") {
                 if (file_exists("../" . $producto->imagen)) {
                     @unlink("../" . $producto->imagen);
                 }
-                $imagen= $rutaRelativa;*/
+                $imagen= $rutaRelativa;
             }
             //actualizar
             $actualizar = $objProducto->actualizar($id_producto, $codigo, $nombre, $detalle, $precio, $stock, $id_categoria, $fecha_vencimiento, $imagen, $id_proveedor);
