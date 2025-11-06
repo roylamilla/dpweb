@@ -97,6 +97,7 @@
                         <div class="col-sm-8">
                             <button type="submit" class="btn btn-primary">Actualizar</button>
                             <a href="<?= BASE_URL ?>products" class="btn btn-warning">Cancelar</a>
+                            <a href="<?= BASE_URL ?>products" class="btn btn-success">Ver productos</a>
                         </div>
                     </div>
 

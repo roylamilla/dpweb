@@ -66,7 +66,11 @@ if ($tipo == "registrar") {
 
 /* Ver productos registrados */
 if ($tipo == "ver_productos") {
+    $respuesta = array('status' => false, 'msg' => 'fallo el controlador');
     $productos = $objProducto->verProductos();
+    if (count($productos)) {
+        $respuesta = array('status' => true, 'msg' => '', 'data' => $productos);
+    }
     echo json_encode($productos);
 }
 
@@ -306,3 +310,8 @@ if ($tipo == "eliminar") {
     echo json_encode($arrResponse);
     exit;
 }
+
+
+// mostrar imagenes de productos
+
+

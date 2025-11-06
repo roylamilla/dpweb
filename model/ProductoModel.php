@@ -11,15 +11,15 @@ class ProductoModel
 
     public function registrar($codigo, $nombre, $detalle, $precio, $stock, $id_categoria, $fecha_vencimiento, $imagen, $id_proveedor)
     {
-        $codigo            = $this->conexion->real_escape_string($codigo);
-        $nombre            = $this->conexion->real_escape_string($nombre);
-        $detalle           = $this->conexion->real_escape_string($detalle);
-        $precio            = floatval($precio);
-        $stock             = intval($stock);
-        $id_categoria      = intval($id_categoria);
+        $codigo = $this->conexion->real_escape_string($codigo);
+        $nombre = $this->conexion->real_escape_string($nombre);
+        $detalle = $this->conexion->real_escape_string($detalle);
+        $precio = floatval($precio);
+        $stock = intval($stock);
+        $id_categoria = intval($id_categoria);
         $fecha_vencimiento = $this->conexion->real_escape_string($fecha_vencimiento);
-        $id_proveedor      = intval($id_proveedor);
-        $imagen            = $this->conexion->real_escape_string($imagen);
+        $id_proveedor = intval($id_proveedor);
+        $imagen = $this->conexion->real_escape_string($imagen);
         $consulta = "INSERT INTO producto (codigo, nombre, detalle, precio, stock, id_categoria, fecha_vencimiento, imagen, id_proveedor) VALUES ('$codigo', '$nombre', '$detalle', $precio, $stock, $id_categoria, '$fecha_vencimiento', '$imagen', '$id_proveedor')";
         $sql = $this->conexion->query($consulta);
         if ($sql) {
@@ -150,4 +150,11 @@ class ProductoModel
         $sql = $this->conexion->query($consulta);
         return $sql;
     }
+
+
+
+    //mostrar imagenes de productos
+    
+
 }
+

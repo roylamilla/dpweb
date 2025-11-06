@@ -254,3 +254,113 @@ async function cargar_proveedores() {
     //console.log(contenido);
     document.getElementById("id_proveedor").innerHTML = contenido;
 }
+
+
+//mostrar imagenes de los productos
+
+async function view_imagen() {
+    try {
+        let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=ver_productos', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache'
+        });
+
+        let json = await respuesta.json();
+        let product_imagens = document.getElementById('product-imagen');
+        product_imagens.innerHTML = ''; // limpiamos antes de insertar
+
+        json.forEach((product, index) => {
+            let card = document.createElement('div');
+            card.classList.add('card-product');
+            card.innerHTML = `
+                <div>${index + 1}</div>
+                <img src="${product.imagen}" alt="${product.nombre}">
+                <div class="nombre">${product.nombre}</div>
+                <div class="detalle">${product.detalle}</div>
+                <div class="precio"> <p>precio:</p>
+                <span>${product.precio}</span>
+                </div>
+                
+            `;
+
+            product_imagens.appendChild(card);
+        });
+
+
+    } catch (error) {
+        console.log('Error al obtener productos: ' + error);
+    }
+}
+
+// Cargar productos al cargar la página
+if (document.getElementById('product-imagen')) {
+    view_imagen();
+}
+
+
+/*
+async function view_imagen() {
+  try {
+    // Enviar filtro para que el controlador filtre o retorne todos (según lógica del servidor)
+    let formData = new FormData();
+    formData.append('tipo', 'ver_productos');
+    formData.append('filtro', filtro);
+
+    let respuesta = await fetch(base_url + 'control/ProductoController.php', {
+      method: 'POST',
+      body: formData,
+    });
+
+    let json = await respuesta.json();
+
+    const product_imagens = document.getElementById('product-imagen');
+    const contador = document.getElementById('contador');
+    product_imagens.innerHTML = ''; // limpiar
+
+    if (!Array.isArray(json) || json.length === 0) {
+      contador.textContent = 'No hay productos para mostrar.';
+      return;
+    }
+
+    contador.textContent = `1 - ${json.length} de ${json.length} producto`;
+
+    json.forEach(product => {
+      
+      const card = document.createElement('div');
+      card.classList.add('card-product');
+
+      card.innerHTML = `
+        <img src="${product.imagen}" alt="${product.nombre}">
+        <div class="marca">${product.nombre ?? ''}</div>
+        <div class="descripcion">${product.nombre}<br>${product.detalle}</div>
+        <div class="precio">
+          <span>${precio}</span>
+          ${precio_original ? `<span class="precio-original">${precio_original}</span>` : ''}
+        </div>
+      `;
+
+      content_products.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error('Error al obtener productos:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filtroBtns = document.querySelectorAll('.filtros button');
+
+  filtroBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      filtroBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      view_products(btn.getAttribute('data-filtro'));
+    });
+  });
+
+  // Carga inicial con mayor descuento
+  view_products();
+});*/
+
+

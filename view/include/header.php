@@ -7,6 +7,7 @@
     <title> RALP </title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>view/bootstrap/css/bootstrap.min.css">
     <link rel="icon" type="image/x-icon" href="view/img/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         const base_url = '<?php echo BASE_URL; ?>';
     </script>
