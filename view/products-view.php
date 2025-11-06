@@ -79,7 +79,39 @@
             align-items: baseline;
             gap: 6px;
         }
+
+        .btn-carrito {
+            padding: 4px 10px;
+            background-color: #4800ffb1;
+            /* Verde estándar */
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            /* Espacio entre icono y texto */
+        }
+
+        .btn-carrito:hover {
+            background-color: #0dff00ff;
+            /* Verde más oscuro al pasar el mouse */
+        }
+
+        .btn-detalles {
+            padding: 8px 12px;
+            background-color: #007bffba;
+            /* Azul para el botón de detalles */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-detalles:hover {
+            background-color: blue;
+        }
     </style>
+
 
     <div class="responsive">
         <div class="product-imagen" id="product-imagen">

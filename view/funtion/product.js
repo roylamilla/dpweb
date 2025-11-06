@@ -281,6 +281,11 @@ async function view_imagen() {
                 <div class="precio"> <p>precio:</p>
                 <span>${product.precio}</span>
                 </div>
+
+                <div style="display: flex; gap: 4px;">
+                <button class="btn-carrito"><i class="fas fa-shopping-cart"></i>🛒Carrito</button>
+                <button class="btn-detalles">📒Detalles</button>
+                </div>
                 
             `;
 
