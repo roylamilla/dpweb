@@ -16,7 +16,7 @@
             /*background-color: #2784e7ff;*/
             /*background: linear-gradient(135deg, #6a8cb1ff, #457cb4ff);*/
             /*background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);*/
-            background: linear-gradient(45deg, #0ef, #c800ffff);
+            background: linear-gradient(45deg, rgba(6, 165, 176, 1), #c800ffff);
             background-size: 100%;
             background-attachment: fixed;
             background-repeat: no-repeat;
@@ -48,13 +48,13 @@
         }
 
         #navbarSupportedContent {
-            background: linear-gradient(45deg, #0ef, #c800ffff);
+            background: linear-gradient(45deg, rgba(6, 165, 176, 1), #c800ffff);
             /*background-color: #2784e7ff;*/
             /*background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);*/
         }
 
         #menu {
-            background: linear-gradient(45deg, rgba(49, 217, 230, 1), #c800ffff);
+            background: linear-gradient(45deg, rgba(6, 165, 176, 1), #c800ffff);
             /*background-color: #2784e7ff;*/
             /*background: linear-gradient(135deg, #1a2a6c, #2a3a7c, #3a4a8c);*/
         }
@@ -79,6 +79,12 @@
             font-family: fantasy;
             color: white;
         }
+
+        img{
+            width: 60px;
+            height: 60px;
+            border: none;
+        }
     </style>
 </head>
 
@@ -86,7 +92,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" id="menu">
             <a class="navbar-brand" href="">
-                <h1 style="color: white;">LR</h1>
+                <img src="view/img/E-N-D.png" alt="E-N-D">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -113,10 +119,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL; ?>cliente">Clientes</a>
                     </li>
-                    <!--
+                    
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>compras">Shops</a>
+                        <a class="nav-link" href="<?php echo BASE_URL; ?>proveedor">Proveedor</a>
                     </li>
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL; ?>venta">Sales</a>
                     </li>

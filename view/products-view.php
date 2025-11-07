@@ -4,6 +4,9 @@
         <h3 class="new-product">
             <a class="nav-link" href="<?php echo BASE_URL; ?>new-products">Nuevo Producto</a>
         </h3>
+        <h3 class="new-product">
+            <a class="nav-link" href="<?php echo BASE_URL; ?>products">Lista Producto</a>
+        </h3>
     </div>
     <style>
         .arriba {
