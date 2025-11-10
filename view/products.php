@@ -5,7 +5,7 @@
             <a class="nav-link" href="<?php echo BASE_URL; ?>new-products">Nuevo Producto</a>
         </h3>
         <h3 class="product-view">
-            <a class="nav-link" href="<?php echo BASE_URL; ?>products-view">Imagen Productos</a>
+            <a class="nav-link" href="<?php echo BASE_URL; ?>venta">Imagen Productos</a>
         </h3>
     </div>
     <style>

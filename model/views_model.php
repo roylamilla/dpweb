@@ -3,7 +3,7 @@ class viewModel
 {
     protected static function get_view($view)
     {
-        $white_list = ["products", "new-products","edit-products", "products-view",
+        $white_list = ["products", "new-products","edit-products", "products-view", "venta",
          "users","new-user","edit-user","category","new-category",
          "edit-category","detalle_venta","pagos","sesiones","venta",
          "compras","cliente","new-cliente", "edit-cliente","proveedor",

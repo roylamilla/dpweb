@@ -303,5 +303,192 @@ if (document.getElementById('product-imagen')) {
     view_imagen();
 }
 
+/*
+//sidebar carrito de compras
+// Contenedor del sidebar y botón cerrar
+const sidebar = document.getElementById('sidebar-carrito');
+const carritoItemsContainer = document.getElementById('carrito-items');
+const closeSidebarBtn = document.getElementById('close-sidebar');
 
+// Objeto para almacenar productos en el carrito
+let carrito = {};
+
+// Función para actualizar la vista del carrito en el sidebar
+function renderCarrito() {
+    carritoItemsContainer.innerHTML = '';
+
+    const keys = Object.keys(carrito);
+    if (keys.length === 0) {
+        carritoItemsContainer.innerHTML = '<p>Tu carrito está vacío</p>';
+        return;
+    }
+
+    keys.forEach(key => {
+        const item = carrito[key];
+        const itemDiv = document.createElement('div');
+
+        itemDiv.innerHTML = `
+            <div class="item-info">
+                <p><strong>${item.nombre}</strong></p>
+                <p>Precio: $${item.precio}</p>
+                <p>Cantidad: ${item.cantidad}</p>
+            </div>
+            <button class="eliminar" data-id="${key}">Eliminar</button>
+        `;
+
+        carritoItemsContainer.appendChild(itemDiv);
+    });
+
+    // Agregar evento a botones eliminar
+    carritoItemsContainer.querySelectorAll('button.eliminar').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const id = e.target.getAttribute('data-id');
+            delete carrito[id];
+            renderCarrito();
+        });
+    });
+}
+
+// Mostrar sidebar
+function showSidebar() {
+    sidebar.classList.add('show');
+}
+
+// Ocultar sidebar
+function hideSidebar() {
+    sidebar.classList.remove('show');
+}
+
+// Agregar funcionalidad a botones Carrito de cada producto
+function setupCarritoButtons() {
+    const btnsCarrito = document.querySelectorAll('.btn-carrito');
+    btnsCarrito.forEach((btn, idx) => {
+        btn.addEventListener('click', () => {
+            // Obtener datos del producto
+            const card = btn.closest('.card-product');
+            const nombre = card.querySelector('.nombre').innerText;
+            const precioText = card.querySelector('.precio span').innerText;
+            const precio = parseFloat(precioText);
+
+            // Para simplificar se usa el índice como id
+            const id = `producto_${idx}`;
+
+            // Si producto ya existe, aumentar cantidad
+            if (carrito[id]) {
+                carrito[id].cantidad += 1;
+            } else {
+                carrito[id] = {
+                    nombre,
+                    precio,
+                    cantidad: 1,
+                };
+            }
+
+            renderCarrito();
+            showSidebar();
+        });
+    });
+}
+
+// Evento botón cerrar sidebar
+closeSidebarBtn.addEventListener('click', () => {
+    hideSidebar();
+});
+
+// Luego de cargar productos, agregar evento a botones carrito
+async function view_imagen() {
+    try {
+        let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=ver_productos', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache'
+        });
+
+        let json = await respuesta.json();
+        let product_imagens = document.getElementById('product-imagen');
+        product_imagens.innerHTML = ''; // limpiamos antes de insertar
+
+        json.forEach((product, index) => {
+            let card = document.createElement('div');
+            card.classList.add('card-product');
+            card.innerHTML = `
+                <div>${index + 1}</div>
+                <img src="${product.imagen}" alt="${product.nombre}">
+                <div class="nombre">${product.nombre}</div>
+                <div class="detalle">${product.detalle}</div>
+                <div class="precio"> <p>precio:</p>
+                <span>${product.precio}</span>
+                </div>
+
+                <div style="display: flex; gap: 4px;">
+                <button class="btn-carrito"><i class="fas fa-shopping-cart"></i>🛒Carrito</button>
+                <button class="btn-detalles">📒Detalles</button>
+                </div>
+                
+            `;
+
+            product_imagens.appendChild(card);
+        });
+
+        // Después de renderizar, asignar eventos a botones carrito:
+        setupCarritoButtons();
+
+    } catch (error) {
+        console.log('Error al obtener productos: ' + error);
+    }
+}
+
+//total de productos en el carrito y precios
+function renderCarrito() {
+    carritoItemsContainer.innerHTML = '';
+
+    const keys = Object.keys(carrito);
+    if (keys.length === 0) {
+        carritoItemsContainer.innerHTML = '<p>Tu carrito está vacío</p>';
+        document.getElementById('carrito-totales').style.display = 'none';
+        return;
+    }
+
+    let subtotal = 0;
+
+    keys.forEach(key => {
+        const item = carrito[key];
+        const itemDiv = document.createElement('div');
+
+        const itemTotal = item.precio * item.cantidad;
+        subtotal += itemTotal;
+
+        itemDiv.innerHTML = `
+            <div class="item-info">
+                <p><strong>${item.nombre}</strong></p>
+                <p>Precio: $${item.precio.toFixed(2)}</p>
+                <p>Cantidad: ${item.cantidad}</p>
+                <p>Subtotal: $${itemTotal.toFixed(2)}</p>
+            </div>
+            <button class="eliminar" data-id="${key}">Eliminar</button>
+        `;
+
+        carritoItemsContainer.appendChild(itemDiv);
+    });
+
+    // Mostrar totales
+    const igv = subtotal * 0.18;
+    const total = subtotal + igv;
+
+    document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+    document.getElementById('igv').textContent = igv.toFixed(2);
+    document.getElementById('total').textContent = total.toFixed(2);
+
+    document.getElementById('carrito-totales').style.display = 'block';
+
+    // Eventos para eliminar producto
+    carritoItemsContainer.querySelectorAll('button.eliminar').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const id = e.target.getAttribute('data-id');
+            delete carrito[id];
+            renderCarrito();
+        });
+    });
+}
+*/
 
