@@ -263,14 +263,18 @@ async function cargar_proveedores() {
 
 async function view_imagen() {
     try {
-        let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=ver_productos', {
+        let dato = document.getElementById('buscar_producto').value;
+        const datos = new FormData();
+        datos.append('dato', dato);
+        let respuesta = await fetch(base_url + 'control/ProductoController.php?tipo=buscar_producto_venta', {
             method: 'POST',
             mode: 'cors',
-            cache: 'no-cache'
+            cache: 'no-cache',
+            body: datos
         });
 
         let json = await respuesta.json();
-        let product_imagens = document.getElementById('product-imagen');
+        product_imagens = document.getElementById('product-imagen');
         product_imagens.innerHTML = ''; // limpiamos antes de insertar
 
         json.forEach((product, index) => {

@@ -122,7 +122,7 @@
             <div class="card-body row" style="background: whitesmoke;">
                 <h5 class="card-title col-md-4">Busqueda de Productos</h5>
                 <div class="col-md-6">
-                    <input type="text" id="buscar_producto" class="form-control col-md-12" placeholder="Buscar producto por nombre o código..." onkeypress="view_imagen();">
+                    <input type="text" id="buscar_producto" class="form-control col-md-12" placeholder="Buscar producto por nombre o código..." onkeyup="view_imagen();">
                 </div>
                 <div class="responsive">
                     <div class="row container-fluid" id="product-imagen">
