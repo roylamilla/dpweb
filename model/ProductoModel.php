@@ -153,7 +153,16 @@ class ProductoModel
 
 
 
-    //mostrar imagenes de productos
+    //buscar producto por nombre o codigo
+    public function buscarProductoByNombreOrCodigo($dato){
+        $arr_productos = array();
+        $consulta = "SELECT * FROM producto WHERE codigo LIKE '$dato%' OR nombre LIKE '%$dato%' OR detalle LIKE '%$dato%'";
+        $sql = $this->conexion->query($consulta);
+        while ($objeto = $sql->fetch_object()) {
+            array_push($arr_productos, $objeto);
+        }
+        return $arr_productos;
+    }
     
 
 }

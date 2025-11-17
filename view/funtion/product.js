@@ -306,3 +306,4 @@ if (document.getElementById('product-imagen')) {
     view_imagen();
 }
 
+//buscar productos en venta
