@@ -38,10 +38,8 @@
                     <th class="bg-white">Precio</th>
                     <th class="bg-white">Stock</th>
                     <th class="bg-white">categoria</th>
-                    <!--
-                    <th class="bg-white">fecha_vencimiento</th>
-                    -->
                     <th class="bg-white">proveedor</th>
+                    <th class="bg-white">Codigo Barra</th>
                     <th class="bg-white">Acciones</th>
                 </tr>
             </thead>
@@ -53,3 +51,4 @@
 </div>
 
 <script src="<?php echo BASE_URL; ?>view/funtion/product.js"></script>
+<script src="<?= BASE_URL ?>view/funtion/JsBarcode.all.min.js"></script>
