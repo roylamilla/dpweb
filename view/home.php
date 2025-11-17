@@ -320,25 +320,6 @@
         <header>
             <h1>Sistema de Gestión Comercial</h1>
             <p class="subtitle">Administra todas las áreas de tu negocio en un solo lugar</p>
-            <!--
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number">1,248</div>
-                    <div class="stat-label">Productos</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">562</div>
-                    <div class="stat-label">Clientes</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">89</div>
-                    <div class="stat-label">Proveedores</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">17</div>
-                    <div class="stat-label">Categorías</div>
-                </div>
-            </div>-->
         </header>
 
         <main>
