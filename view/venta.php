@@ -122,7 +122,10 @@
             <div class="card-body row" style="background: whitesmoke;">
                 <h5 class="card-title col-md-4">Busqueda de Productos</h5>
                 <div class="col-md-6">
-                    <input type="text" id="buscar_producto" class="form-control col-md-12" placeholder="Buscar producto por nombre o código..." onkeyup="view_imagen();">
+                    <input type="text" id="buscar_producto" class="form-control col-md-12" placeholder="Buscar producto por nombre o código..." onkeyup="view_imagen();" >
+                    <input type="hidden" id="id_producto_venta">
+                    <input type="hidden" id="producto_precio-venta">
+                    <input type="hidden" id="producto_cantidad-venta" value="1">
                 </div>
                 <div class="responsive">
                     <div class="row container-fluid" id="product-imagen">
@@ -158,7 +161,7 @@
                                     <td>2</td>
                                     <td>$10.00</td>
                                     <td>$20.00</td>
-                                    <td><button class="btn btn-danger btn-sm"><strong>Eliminar</strong></button></td>
+                                    <td><button class="btn btn-danger btn-sm"><strong>🗑️</strong></button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -181,3 +184,11 @@
 
 <script src="<?php echo BASE_URL; ?>view/funtion/product.js"></script>
 <script src="<?php echo BASE_URL; ?>view/funtion/venta.js"></script>
+<script>
+    let input = document.getElementById("buscar_producto");
+    input.addEventListener('keydown', (event) => {
+        if (event.key == 'Enter') {
+            agregar_producto_temporal();
+        }
+    })
+</script>

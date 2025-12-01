@@ -297,6 +297,12 @@ async function view_imagen() {
             `;
 
             product_imagens.appendChild(card);
+            let id = document.getElementById('id_producto_venta');
+            let precio = document.getElementById('producto_precio-venta');
+            let cantidad = document.getElementById('producto_cantidad-venta');
+            id.value = product.id;
+            precio.value = producto.precio;
+            cantidad.value = 1;
         });
 
 
