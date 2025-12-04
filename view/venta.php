@@ -122,7 +122,7 @@
             <div class="card-body row" style="background: whitesmoke;">
                 <h5 class="card-title col-md-4">Busqueda de Productos</h5>
                 <div class="col-md-6">
-                    <input type="text" id="buscar_producto" class="form-control col-md-12" placeholder="Buscar producto por nombre o código..." onkeyup="view_imagen();" >
+                    <input type="text" id="buscar_producto" class="form-control col-md-12" placeholder="Buscar producto por nombre o código..." onkeyup="view_imagen();">
                     <input type="hidden" id="id_producto_venta">
                     <input type="hidden" id="producto_precio-venta">
                     <input type="hidden" id="producto_cantidad-venta" value="1">
@@ -161,7 +161,10 @@
                                     <td>2</td>
                                     <td>$10.00</td>
                                     <td>$20.00</td>
-                                    <td><button class="btn btn-danger btn-sm"><strong>🗑️</strong></button></td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm"><strong>❌</strong></button>
+                                        <button class="btn btn-success btn-sm"><strong>➕</strong></button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
