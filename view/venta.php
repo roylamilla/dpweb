@@ -1,6 +1,6 @@
 <div class="container-fluid mt-4 row">
 
-    <div class="container col-9">
+    <div class="container col-8">
         <div class="arriba">
             <h3 class="mt-3" style="color: white;">VISTA DE PRODUCTOS</h3>
             <h3 class="new-product">
@@ -122,7 +122,8 @@
             <div class="card-body row" style="background: whitesmoke;">
                 <h5 class="card-title col-md-4">Busqueda de Productos</h5>
                 <div class="col-md-6">
-                    <input type="text" id="buscar_producto" class="form-control col-md-12" placeholder="Buscar producto por nombre o código..." onkeyup="view_imagen();" >
+                    <input type="text" id="buscar_producto" class="form-control col-md-12"
+                        placeholder="Buscar producto por nombre o código..." onkeyup="view_imagen();">
                     <input type="hidden" id="id_producto_venta">
                     <input type="hidden" id="producto_precio-venta">
                     <input type="hidden" id="producto_cantidad-venta" value="1">
@@ -139,39 +140,35 @@
     </div>
 
     <!--Sidebar carrito-->
-    <div class="col-3">
+    <div class="col-4">
         <div class="card">
             <div class="card-body" style="background: whitesmoke;">
                 <h5 class="card-title">Lista de Compra</h5>
-                <div class="row" style="min-height: 500px;">
-                    <div class="col-12 table-responsive"> <!--responsive para el carrito-->
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio</th>
-                                    <th>Total</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="lista_compra">
-                                <tr>
-                                    <td>Producto 1</td>
-                                    <td>2</td>
-                                    <td>$10.00</td>
-                                    <td>$20.00</td>
-                                    <td><button class="btn btn-danger btn-sm"><strong>🗑️</strong></button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="row" style="min-height: auto;">
+                    <div class="col-12"> <!--responsive para el carrito-->
+                        <div class="table-responsive table table-hover">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Prod.</th>
+                                        <th>Cant.</th>
+                                        <th>P. Unit.</th>
+                                        <th>subTotal</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lista_compra">
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 text-end">
-                        <h4>Subtotal : <label id="">$20.00</label></h4>
-                        <h4>Igv : <label id="">$20.00</label></h4>
-                        <h4>Total : <label id="">$20.00</label></h4>
+                        <h4>Subtotal : <label id="subtotal_general"></label></h4>
+                        <h4>Igv : <label id="igv_general"></label></h4>
+                        <h4>Total : <label id="total"></label></h4>
                         <button class="btn btn-success">Realizar Venta ✅</button>
                     </div>
                 </div>
@@ -190,5 +187,7 @@
         if (event.key == 'Enter') {
             agregar_producto_temporal();
         }
-    })
+    });
+    listar_temporales();
+    act_subt_general();
 </script>
