@@ -122,8 +122,12 @@
             <div class="card-body row" style="background: whitesmoke;">
                 <h5 class="card-title col-md-4">Busqueda de Productos</h5>
                 <div class="col-md-6">
+<<<<<<< HEAD
                     <input type="text" id="buscar_producto" class="form-control col-md-12"
                         placeholder="Buscar producto por nombre o código..." onkeyup="view_imagen();">
+=======
+                    <input type="text" id="buscar_producto" class="form-control col-md-12" placeholder="Buscar producto por nombre o código..." onkeyup="view_imagen();">
+>>>>>>> 500992f1bc76fee31dfdc3338d5d9b937d7da4d8
                     <input type="hidden" id="id_producto_venta">
                     <input type="hidden" id="producto_precio-venta">
                     <input type="hidden" id="producto_cantidad-venta" value="1">
@@ -144,6 +148,7 @@
         <div class="card">
             <div class="card-body" style="background: whitesmoke;">
                 <h5 class="card-title">Lista de Compra</h5>
+<<<<<<< HEAD
                 <div class="row" style="min-height: auto;">
                     <div class="col-12"> <!--responsive para el carrito-->
                         <div class="table-responsive table table-hover">
@@ -162,6 +167,33 @@
                                 </tbody>
                             </table>
                         </div>
+=======
+                <div class="row" style="min-height: 500px;">
+                    <div class="col-12 table-responsive"> <!--responsive para el carrito-->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    <th>Total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lista_compra">
+                                <tr>
+                                    <td>Producto 1</td>
+                                    <td>2</td>
+                                    <td>$10.00</td>
+                                    <td>$20.00</td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm"><strong>❌</strong></button>
+                                        <button class="btn btn-success btn-sm"><strong>➕</strong></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+>>>>>>> 500992f1bc76fee31dfdc3338d5d9b937d7da4d8
                     </div>
                 </div>
                 <div class="row">
