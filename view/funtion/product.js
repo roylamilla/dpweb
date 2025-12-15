@@ -290,7 +290,7 @@ async function view_imagen() {
                 </div>
 
                 <div style="display: flex; gap: 4px;">
-                <button class="btn-carrito"><i class="fas fa-shopping-cart"></i>🛒Carrito</button>
+                <button onclick="agregar_producto_temporal(${product.id},${product.precio},1)" class="btn btn-success">🛒Agregar</button>
                 <button class="btn-detalles">📒Detalles</button>
                 </div>
                 

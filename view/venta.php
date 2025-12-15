@@ -170,8 +170,49 @@
                         <h4>Subtotal : <label id="subtotal_general"></label></h4>
                         <h4>Igv : <label id="igv_general"></label></h4>
                         <h4>Total : <label id="total"></label></h4>
-                        <button class="btn btn-success">Realizar Venta ✅</button>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Realizar Venta ✅</button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de Venta</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form id="form_venta">
+                            <div class="col-md-6">
+                                <label for="cliente_dni" class="form-label">DNI del Cliente</label>
+                                <input type="text" class="form-control" id="cliente_dni" name="cliente_dni" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="DNI del cliente">
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary mt-4" onclick="buscar_cliente_venta();">Buscar Cliente</button>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="cliente_nombre" class="form-label">Nombre del Cliente</label>
+                                <input type="text" class="form-control" id="cliente_nombre" name="cliente_nombre" placeholder="Nombre del cliente" readonly>
+                                <input type="hidden" class="form-control" id="id_cliente_venta">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="fecha_venta">Fecha_Venta</label>
+                                <input type="datetime" class="form-control" id="fecha_venta" name="fecha_venta" value="<?= date('Y-m-d H:i'); ?>">
+                            </div>
+                            <div class="col-md-3">
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="registrarVenta();">Registrar Venta</button>
                 </div>
             </div>
         </div>
