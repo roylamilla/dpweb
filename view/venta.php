@@ -186,8 +186,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <form id="form_venta">
+                    <form id="form_venta">
+                        <div class="row">
                             <div class="col-md-6">
                                 <label for="cliente_dni" class="form-label">DNI del Cliente</label>
                                 <input type="text" class="form-control" id="cliente_dni" name="cliente_dni" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="DNI del cliente">
@@ -205,10 +205,11 @@
                                 <input type="datetime" class="form-control" id="fecha_venta" name="fecha_venta" value="<?= date('Y-m-d H:i'); ?>">
                             </div>
                             <div class="col-md-3">
-                                
+
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

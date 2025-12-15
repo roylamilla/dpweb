@@ -84,7 +84,7 @@ if ($tipo=="registrar_venta") {
     $respuesta = array('status' => false, 'msg' => 'fallo el controlador');
 
     if ($ultima_venta) {
-        $correlativo = $ultima_venta->correlativo + 1;
+        $correlativo = $ultima_venta->codigo + 1;
     }else {
         $correlativo = 1;
     }
@@ -102,4 +102,5 @@ if ($tipo=="registrar_venta") {
     }else {
         $respuesta = array('status' => false, 'msg' => 'error al registrar la venta');
     }
+    echo json_encode($respuesta);
 }
